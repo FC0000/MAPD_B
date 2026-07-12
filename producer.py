@@ -14,7 +14,7 @@ producer = KafkaProducer(
     #transactional_id           # not needed
     enable_idempotence = True,  # Ensure that exactly one copy of each message is written in the stream
     #delivery_timeout_ms        # not needed
-    #acks = ,                   # use default all
+    #acks = 0,                   # use default all
     compression_type=None,      # No compression
     #retries                    # not needed
     batch_size = 0,             # Disable batching, we will do our own
@@ -66,42 +66,43 @@ for idx, (i_file, q_file) in enumerate(zip(i_files, q_files)):
 print("\n")
 
 SCANS_PER_BATCH = 16
-THROUGHPUT = 262144 # B/s
+TARGET_THROUGHPUT = 16384#262144 # B/s
 
 SAMPLES_PER_SCAN = 2048
 SAMPLES_PER_BATCH = SCANS_PER_BATCH * SAMPLES_PER_SCAN
 HALF_BATCH_SIZE = 4 * SAMPLES_PER_BATCH
 
-DT = 2*HALF_BATCH_SIZE/THROUGHPUT
+TARGET_PUBLISH_INTERVAL = 2*HALF_BATCH_SIZE/TARGET_THROUGHPUT
 
 n_batches = HALF_TOTAL_SIZE // HALF_BATCH_SIZE
 
 print(f"Streaming {n_batches} batches of size {2*HALF_BATCH_SIZE}B...")
-start_time = time.perf_counter()
-for i in range(n_batches):
-    start = i * HALF_BATCH_SIZE
-    end = start + HALF_BATCH_SIZE
+try:
+    start_time = time.perf_counter()
+    for i in range(n_batches):
+        start = i * HALF_BATCH_SIZE
+        end = start + HALF_BATCH_SIZE
 
-    i_bytes = i_data[start:end]
-    q_bytes = q_data[start:end]
+        i_bytes = i_data[start:end]
+        q_bytes = q_data[start:end]
 
-    packet = i_bytes + q_bytes # concatenation
-    
-    timestamp = time.time()
-    # TODO: for high rates, print less often
-    print(f"[{datetime.datetime.fromtimestamp(timestamp)}] Sending batch {i+1}/{n_batches} (scans up to {(i+1)*SCANS_PER_BATCH})")
-    producer.send(KAFKA_TOPIC, value=packet, headers=[('producer_ts', str(timestamp).encode('utf-8'))])
-    producer.flush()
-    
+        packet = i_bytes + q_bytes # concatenation
+        
+        timestamp = time.time()
+        # TODO: for high rates, print less often
+        print(f"[{datetime.datetime.fromtimestamp(timestamp)}] Sending batch {i+1}/{n_batches} (scans up to {(i+1)*SCANS_PER_BATCH})")
+        producer.send(KAFKA_TOPIC, value=packet, headers=[('producer_ts', str(timestamp).encode('utf-8'))])
+        producer.flush()
+        
 
-    target_time = start_time + i * DT
-    sleep_time = target_time - time.perf_counter()
-    if sleep_time > 0:
-        time.sleep(sleep_time)
-    else:
-        print(f"missed send by {sleep_time}s")
-
-#producer.flush()
-producer.close()
+        target_time = start_time + i * TARGET_PUBLISH_INTERVAL
+        sleep_time = target_time - time.perf_counter()
+        if sleep_time > 0:
+            time.sleep(sleep_time)
+        else:
+            print(f"missed send by {sleep_time}s")
+finally:
+    print("Closing producer...")
+    producer.close()
 
 print("\nDone streaming.")
