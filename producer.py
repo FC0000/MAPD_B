@@ -30,7 +30,7 @@ producer = KafkaProducer(
     key_serializer = None,      # Send raw bytes
     value_serializer = None,    # Send raw bytes
     #transactional_id           # Not needed
-    # enable_idempotence = True,# Ensure that exactly one copy of each message is written in the stream (Commented out for kafka-python-ng compatibility)
+    enable_idempotence = True,# Ensure that exactly one copy of each message is written in the stream (Commented out for kafka-python-ng compatibility)
     #delivery_timeout_ms        # Not needed
     #acks = 0,                  # Use default all
     compression_type=None,      # No compression
@@ -90,7 +90,7 @@ print("\n")
 # Streaming Parameters
 # =============================================================================
 SCANS_PER_BATCH = 1024
-TARGET_THROUGHPUT = 16777216 # Target throughput in Bytes/s (16384 = 16 kB/s, final target will be 16777216 for 16 MB/s)
+TARGET_THROUGHPUT = 16*1024*1024 # Target throughput in Bytes/s (16384 = 16 kB/s, final target will be 16777216 for 16 MB/s)
 
 SAMPLES_PER_SCAN = 2048
 SAMPLES_PER_BATCH = SCANS_PER_BATCH * SAMPLES_PER_SCAN
@@ -140,7 +140,7 @@ try:
         print(f"  send()={t_send_done - t_send_start:.3f}s  flush()={t_flush_done - t_flush_start:.3f}s")
         
         # Calculate the target time and sleep if necessary to maintain the target publish interval
-        target_time = start_time + i * TARGET_PUBLISH_INTERVAL
+        target_time = start_time + (i + 1) * TARGET_PUBLISH_INTERVAL
         sleep_time = target_time - time.perf_counter()
         
         if sleep_time > 0:
