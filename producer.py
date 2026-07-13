@@ -89,7 +89,7 @@ print("\n")
 # =============================================================================
 # Streaming Parameters
 # =============================================================================
-SCANS_PER_BATCH = 1024
+SCANS_PER_BATCH = 256
 TARGET_THROUGHPUT = 16*1024*1024 # Target throughput in Bytes/s (16384 = 16 kB/s, final target will be 16777216 for 16 MB/s)
 
 SAMPLES_PER_SCAN = 2048
@@ -124,21 +124,13 @@ try:
         print(f"[{datetime.datetime.fromtimestamp(timestamp)}] Sending batch {i+1}/{n_batches} (scans up to {(i+1)*SCANS_PER_BATCH})")
 
         # Send packet to Kafka and measure the time for sending
-        t_send_start = time.perf_counter()
         future = producer.send(
             KAFKA_TOPIC, 
             value=packet, 
-            headers=[('producer_ts', str(timestamp).encode('utf-8')), ('throughput', str(TARGET_THROUGHPUT).encode('utf-8')), ('scans_per_batch', str(SCANS_PER_BATCH).encode('utf-8'))] # Attach metadata
+            headers=[('producer_ts', str(timestamp).encode('utf-8')), ('throughput', str(TARGET_THROUGHPUT).encode('utf-8'))] # Attach metadata
         )
-        t_send_done = time.perf_counter()
-
-        # Flush the producer to obtain the batch size we want, and measure the time for flushing
-        t_flush_start = time.perf_counter()
         producer.flush()
-        t_flush_done = time.perf_counter()
 
-        print(f"  send()={t_send_done - t_send_start:.3f}s  flush()={t_flush_done - t_flush_start:.3f}s")
-        
         # Calculate the target time and sleep if necessary to maintain the target publish interval
         target_time = start_time + (i + 1) * TARGET_PUBLISH_INTERVAL
         sleep_time = target_time - time.perf_counter()
