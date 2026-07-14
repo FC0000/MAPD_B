@@ -83,6 +83,7 @@ class BenchmarkLogger:
 
         self.throughput_MB = None
         self.n_scans_per_batch = None
+        self.n_partitions = None
 
         self.producer_begin_ts = None
         self.producer_end_ts = None
@@ -98,7 +99,8 @@ class BenchmarkLogger:
             f"benchmarks/"
             f"{readable_ts}--"
             f"{self.throughput_MB}MBps--"
-            f"{self.n_scans_per_batch}SpB"
+            f"{self.n_scans_per_batch}SpB--"
+            f"{self.n_partitions}parts"
             f"{suffix}"
         )
 
@@ -107,6 +109,7 @@ class BenchmarkLogger:
         self.producer_begin_ts = results["producer_begin_ts"]
         self.throughput_MB = results["throughput_MB"]
         self.n_scans_per_batch = results["n_scans_per_batch"]
+        self.n_partitions = results["n_partitions"]
         self.started = True
 
     def close(self, results):
@@ -125,6 +128,7 @@ class BenchmarkLogger:
             
         benchmark_output = {
             "throughput_MB": self.throughput_MB,
+            "n_partitions": self.n_partitions,
             "n_scans_per_batch": self.n_scans_per_batch,
             "producer_begin_ts": self.producer_begin_ts,
             "producer_end_ts": self.producer_end_ts,
@@ -228,6 +232,7 @@ class GlobalState:
             total_scans = self.n_averaged_scans + batch_n_scans
             self.power_means += delta * batch_n_scans / total_scans
             self.power_M2s += batch_M2s + delta**2 * self.n_averaged_scans * batch_n_scans / total_scans
+            self.n_averaged_scans = total_scans
 
         # Convert M2s to stds
         if self.n_averaged_scans > 1:
