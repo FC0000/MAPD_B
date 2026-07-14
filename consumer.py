@@ -16,8 +16,6 @@ FREQ_MAX_HZ = 1.1e6
 POWER_MIN = 1e-4
 POWER_MAX = 30
 
-BENCHMARK_FILE = "benchmark_try1.json"
-
 
 # =============================================================================
 # Kafka consumer
@@ -32,308 +30,267 @@ consumer = KafkaConsumer(
     security_protocol="PLAINTEXT"
 )
 
+
+
+class WorkerState:
+    def __init__(self):
+        self.reset_state()
+
+    def reset_state(self):
+        self.worker_id = None
+        self.update_tss = []
+        self.stream_end_ts = None
+
+        self.last_power_means = None
+        self.last_power_M2s = None
+        self.last_n_scans = 0
+
+        self.log = deque(maxlen=8)
+        self.stream_active = False
+
+
+    def begin_stream(self, results):
+        assert self.stream_active == False
+        self.reset_state()
+        self.stream_active = True
+
+
+    def end_stream(self, results):
+        self.stream_active = False
+        self.stream_end_ts = time.time() # time the worker state is declared finished, not producer_end_ts
+
+
+    def update(self, results):
+        self.update_tss.append(time.time())
+        # results is a dictionary containing: n_averaged_scans, power_means, power_M2s, producer_timestamps, waiting_times, processing_times
+        self.last_power_means = np.asarray(results["power_means"])
+        self.last_power_M2s = np.asarray(results["power_M2s"])
+        self.last_n_scans = results["n_averaged_scans"]
+
+        self.log.appendleft(f"{time.strftime('%H:%M:%S')} | {self.last_n_scans} scans, ") # TODO: add net latency
+
+worker_states = {}
+
+
+
+class BenchmarkLogger:
+    def __init__(self):
+        self.filename = None
+
+        self.throughput_MB = None
+        self.n_scans_per_batch = None
+
+        self.producer_begin_ts = None
+        self.producer_end_ts = None
+
+        self.analysis_end_ts = None
+
+        self.records = []
+
+    def update(self, msg):
+        pass
+
+
+benchmark_logger = BenchmarkLogger()
+
+
+
+class GlobalState:
+    def __init__(self):
+        self.reset_state()
+
+
+    def reset_state(self):
+        self.producer_begin_ts = None
+        self.producer_end_ts = None
+
+        self.producer_throughput_MB = None
+        self.n_scans_per_producer_batch = None
+
+        self.frequencies = []
+        self.power_means = []
+        self.power_M2s = []
+        self.power_stds = []
+        self.n_averaged_scans = 0
+
+        self.stream_active = False
+
+
+    def begin_stream(self, results):
+        if self.stream_active == False:
+            self.reset_state()
+            self.stream_active = True
+            self.producer_throughput_MB = results["throughput_MB"]
+            self.n_scans_per_producer_batch = results["n_scans_per_batch"]
+            self.producer_begin_ts = results["producer_begin_ts"]
+            self.frequencies = results["frequencies"].copy()
+
+            global worker_states
+            worker_states = {}
+        else:
+            assert self.producer_throughput_MB == results["throughput_MB"]
+            assert self.n_scans_per_producer_batch == results["n_scans_per_batch"]
+            assert self.frequencies == results["frequencies"]
+            self.producer_begin_ts = min(self.producer_begin_ts, results["producer_begin_ts"])
+
+
+    def end_stream(self, results):
+        self.stream_active = False
+        self.producer_end_ts = results["producer_end_ts"]
+
+
+    def update(self, results):
+        # results is a dictionary containing: n_averaged_scans, power_means, power_M2s, producer_timestamps, waiting_times, processing_times
+        batch_means = np.asarray(results["power_means"])
+        batch_M2s = np.asarray(results["power_M2s"])
+        batch_n_scans = results["n_averaged_scans"]
+        if self.n_averaged_scans == 0:
+            self.power_means = batch_means
+            self.power_M2s = batch_M2s
+            self.n_averaged_scans = batch_n_scans
+        else:
+            delta = batch_means - self.power_means
+            total_scans = self.n_averaged_scans + batch_n_scans
+            self.power_means += delta * batch_n_scans / total_scans
+            self.power_M2s += batch_M2s + delta**2 * self.n_averaged_scans * batch_n_scans / total_scans
+
+        # Convert M2s to stds
+        if self.n_averaged_scans > 1:
+            self.power_stds = np.sqrt(self.power_M2s / (self.n_averaged_scans - 1))
+
+global_state = GlobalState()
+
+
+
+def update_states(msg):
+    worker_id = msg.value["worker_id"]
+    if worker_id not in worker_states: # Create worker state if it doesn't exist
+        worker_states[worker_id] = WorkerState()
+    worker_state = worker_states[worker_id]
+    results = msg.value["results"]
+
+    # Handle begin and end of stream signals
+    if msg.headers:
+        for key, _ in msg.headers:
+            if key == "BEGIN_STREAM":
+                global_state.begin_stream(results)
+                worker_state.begin_stream(results)
+                return
+            elif key == "END_STREAM":
+                worker_state.end_stream(results)
+                # Send signal to global_state only if all workers finished
+                if all(not ws.stream_active for ws in worker_states.values()):
+                    global_state.end_stream(results)
+                return
+            
+    # Update worker and global states
+    worker_state.update(results)
+    global_state.update(results)
+
+
 # =============================================================================
-# Dashboard Setup
+# Dashboard
 # =============================================================================
-plt.ion() # Enable matplotlib interactive mode for real-time plotting
-fig = plt.figure(figsize=(15, 7))
+class Dashboard:
+    def __init__(self):
+        # Enable matplotlib interactive mode for real-time plotting
+        plt.ion()
+        self.fig = plt.figure(figsize=(15, 7))
 
-# Set up the main global plot (top half of the window)
-ax_global = plt.subplot2grid((2, 1), (0, 0))
-global_line, = ax_global.plot([], [], lw=2)
-ax_global.set_xlabel("Frequency (Hz)")
-ax_global.set_ylabel("Power")
-ax_global.set_xlim(FREQ_MIN_HZ, FREQ_MAX_HZ)
-ax_global.set_ylim(POWER_MIN, POWER_MAX)
-ax_global.grid(True)
+        self.rebuild()
 
-worker_states = {} # Stores data and logs for each worker
-worker_plots = {}  # Stores matplotlib objects for each worker's subplot
+    class WorkerPlot:
+        def __init__(self, axis, data, log_text):
+            self.axis = axis
+            self.data = data
+            self.log_text = log_text
 
-# Variables to keep track of the cumulative spectrum across all workers
-global_frequencies = None
-global_power_means = None
-global_power_M2s = None
-global_n_averaged_scans = 0
+    def rebuild(self):
+        self.fig.clf()
+        n_workers = max(len(worker_states), 1)
+        # Layout: 1 top row for global, 1 middle row for spectra, 1 bottom row for text logs
+        grid = self.fig.add_gridspec(3, n_workers, height_ratios=[2.0, 0.9, 1.2], hspace=0.35)
 
-# =============================================================================
-# Main loop
-# ============================================================================= 
-print(f"Listening for messages: latencies will be saved to {BENCHMARK_FILE}")
+        self.global_axis = self.fig.add_subplot(grid[0, :])
+        self.global_data, = self.global_axis.plot([], [], lw=2)
+        self.global_errors = self.global_axis.errorbar([], [], yerr=[], fmt="none", capsize=2, alpha=0.7 )
+        self.global_axis.set_xlim(FREQ_MIN_HZ, FREQ_MAX_HZ)
+        self.global_axis.set_ylim(POWER_MIN, POWER_MAX)
+        self.global_axis.set_yscale("log")
+        self.global_axis.set_xlabel("Frequency (Hz)")
+        self.global_axis.set_ylabel("Power")
+        self.global_axis.grid(True)
 
-n_eof = 0
-plot_start_time = None
+        self.worker_plots = {}
+        for column, worker_id in enumerate(sorted(worker_states)):
+            # Setup individual worker spectrum plot
+            spectrum_axis = self.fig.add_subplot(grid[1, column])
+            spectrum_data, = spectrum_axis.plot([], [], lw=1.5)
+            spectrum_axis.set_xlim(FREQ_MIN_HZ, FREQ_MAX_HZ)
+            spectrum_axis.set_ylim(POWER_MIN, POWER_MAX)
+            spectrum_axis.set_yscale("log")
+            spectrum_axis.set_xlabel("Frequency (Hz)")
+            spectrum_axis.set_ylabel("Power")
+            spectrum_axis.grid(True)
 
-throughput = None
-n_scans_per_batch = None
+            # Setup text box for worker logs
+            log_axis = self.fig.add_subplot(grid[2, column])
+            log_axis.axis("off")
+            log_text = log_axis.text(0, 1, "", transform=log_axis.transAxes, va="top", fontsize=8)
 
-benchmark_records = []
+            self.worker_plots[worker_id] = self.WorkerPlot(spectrum_axis, spectrum_data, log_text)
 
-class eof_exit(Exception):
-    pass
+
+    def update(self):
+        # Rebuild the figure if the number of workers changes
+        if len(self.worker_plots) != len(worker_states):
+            self.rebuild()
+
+        # Draw the latest data on the global plot
+        nonzero_power_means = np.maximum(global_state.power_means, 1e-12)
+        self.global_data.set_data(global_state.frequencies, nonzero_power_means)
+        self.global_errors.remove()
+        self.global_errors = self.global_axis.errorbar(global_state.frequencies, nonzero_power_means, yerr=global_state.power_stds, fmt="none", capsize=2, alpha=0.7)
+        self.global_axis.set_title(f"Cumulative Mean Spectrum ({global_state.n_averaged_scans} scans, elapsed {time.time() - global_state.producer_begin_ts:.1f} s)")
+
+        # Iterate over all workers to update their subplots and text logs
+        for worker_id in sorted(worker_states):
+            worker_state = worker_states[worker_id]
+            worker_plot = self.worker_plots[worker_id]
+
+            nonzero_power_mean = np.maximum(worker_state.last_power_means, 1e-12)
+            worker_plot.data.set_data(global_state.frequencies, nonzero_power_mean)
+            worker_plot.axis.set_title(f"Worker {worker_id}")
+            worker_plot.log_text.set_text(
+                f"N. of scans: {worker_state.last_n_scans}\n"
+                f"Age: {time.time() - worker_state.update_tss[-1]:.1f} s\n"
+                f"Avg age: {np.mean(np.diff(worker_state.update_tss)) if len(worker_state.update_tss) > 1 else 0:.1f} s\n"
+                f"\n"
+                f"Log\n" +
+                "-" * 30 + "\n" +
+                "\n".join(worker_state.log)
+            )
+        # Render the updated graphics
+        self.fig.canvas.draw_idle()
+        self.fig.canvas.flush_events()
+
+
+
+dashboard = Dashboard()
+
+
+
 
 try:
     # Keep running as long as the matplotlib window is open
-    while plt.fignum_exists(fig.number):
-        
+    while plt.fignum_exists(dashboard.fig.number):
         # Fetch new messages (max 100ms wait)
         records = consumer.poll(timeout_ms=100)
-
         for _, messages in records.items():
             for msg in messages:
-                eof = False
-                receive_ts = time.time()
-
-                if msg.headers:
-                    for key, value in msg.headers:
-                        if key == "EOF":
-                            print("EOF")
-                            eof = True
-                            n_eof += 1
-                if n_eof != 0 and n_eof == n_workers:
-                    print(f"Received {n_eof} EOFs, exiting")
-                    raise eof_exit()
-                if eof:
-                     continue
-
-                packet = msg.value
-    
-                worker_id = packet["worker_id"]
-                
-                # Register a new worker if seen for the first time
-                if worker_id not in worker_states:
-                    worker_states[worker_id] = {
-                        "frequencies": None,
-                        "power_means": None,
-                        "power_M2s": None,
-                        "n_averaged_scans": 0,
-
-                        "producer_tss": None,
-                        "receive_tss": [],
-                        "waiting_times": None,
-                        "processing_times": None,
-                        
-                        "log": deque(maxlen=8), # Keep only the last 8 log lines
-                    }
-                worker = worker_states[worker_id]
-
-                # Extract results from the packet
-                results = packet["results"]
-                worker["n_averaged_scans"] = results["n_averaged_scans"]
-                worker["frequencies"] = np.asarray(results["frequencies"])
-                worker["power_means"] = np.asarray(results["power_means"])
-                worker["power_M2s"] = np.asarray(results["power_M2s"])
-
-                # Extract timing metrics
-                metrics = packet["batches_details"]
-                worker["producer_tss"] = metrics["producer_timestamps"]
-                worker["waiting_times"] = metrics["waiting_times"]
-                worker["processing_times"] = metrics["processing_times"]
-                if n_scans_per_batch is None:
-                    n_scans_per_batch = metrics["scans_per_batch"]
-                else:
-                    assert n_scans_per_batch == metrics["scans_per_batch"]
-                if throughput is None:
-                    throughput = metrics["throughput"]
-                else:
-                    assert throughput == metrics["throughput"]
-                worker["receive_tss"].append(receive_ts)
-            
-                
-                # Update global cumulative spectrum using a running average
-                if global_power_means is None:
-                    if plot_start_time is None:
-                        plot_start_time = time.time()
-                    global_frequencies = worker["frequencies"]
-                    global_power_means = worker["power_means"].copy()
-                    global_power_M2s = worker["power_M2s"].copy()
-                    global_n_averaged_scans = worker["n_averaged_scans"]
-                else:
-                    # Compute the difference and update weights based on scans
-                    delta = worker["power_means"] - global_power_means
-                    total_scans = global_n_averaged_scans + worker["n_averaged_scans"]
-                    global_power_means += delta * worker["n_averaged_scans"] / total_scans
-                    global_power_M2s += worker["power_M2s"] + delta**2 * global_n_averaged_scans * worker["n_averaged_scans"] / total_scans
-                    global_n_averaged_scans = total_scans
-
-                # Parse latencies and save benchmarks
-                producer_tss = metrics.get("producer_timestamps", [])
-                processing_times_s = metrics.get("processing_times", [])
-                
-
-                net_latencies_ms = []
-                for t_start in producer_tss:
-                    if t_start is not None:
-                        # Network latency = Total time (producer-consumer) - Time spent in the network and VMs
-                        network_latency = (receive_ts - t_start) * 1000
-                        net_latencies_ms.append(network_latency)
-
-                fft_latencies = [t * 1000 for t in processing_times_s]
-
-                if net_latencies_ms:
-                    worker["last_net_mean"] = np.mean(net_latencies_ms)
-                    worker["last_net_p95"] = np.percentile(net_latencies_ms, 95)
-                else:
-                    worker["last_net_mean"] = 0.0
-                    worker["last_net_p95"] = 0.0
-
-                if fft_latencies:
-                    worker["last_fft_mean"] = np.mean(fft_latencies)
-                    worker["last_fft_p95"] = np.percentile(fft_latencies, 95)
-                else:
-                    worker["last_fft_mean"] = 0.0
-                    worker["last_fft_p95"] = 0.0
-
-                # Save Benchmark
-                benchmark_records.append({
-                        "worker_id": worker_id,
-                        "n_averaged_scans": worker["n_averaged_scans"],
-                        "production_tss": worker["producer_tss"],
-                        "receive_tss": worker["receive_tss"],
-                        "net_latencies_ms": net_latencies_ms,
-                        "fft_latencies_ms": fft_latencies,
-                        "waiting_times": worker["waiting_times"]
-                    })
-                    
-
-                # Print on the dashboard
-                worker["log"].appendleft(
-                    f"{time.strftime('%H:%M:%S')} | "
-                    f"Net [Mean: {worker['last_net_mean']:.1f}ms, P95: {worker['last_net_p95']:.1f}ms] | "
-                    f"FFT [Mean: {worker['last_fft_mean']:.1f}ms, P95: {worker['last_fft_p95']:.1f}ms]"
-                )
-
-                # Print on the console
-                print(
-                    f"{time.strftime('%H:%M:%S')} worker={worker_id} scans={worker['n_averaged_scans']} | "
-                    f"Net (mean={worker['last_net_mean']:.1f}ms, p95={worker['last_net_p95']:.1f}ms) | "
-                    f"FFT (mean={worker['last_fft_mean']:.1f}ms, p95={worker['last_fft_p95']:.1f}ms)"
-                )
-
-        # -------------------------------------------------------------------------
-        # Interface rendering
-        # -------------------------------------------------------------------------
-        # Dynamically rebuild the figure if the number of workers changes
-        if len(worker_plots) != len(worker_states):
-            fig.clf()
-            n_workers = max(len(worker_states), 1)
-            # Create a layout: 1 top row for global, 1 middle row for spectra, 1 bottom row for text logs
-            grid = fig.add_gridspec(3, n_workers, height_ratios=[2.0, 0.9, 1.2], hspace=0.35)
-
-            ax_global = fig.add_subplot(grid[0, :])
-            global_line, = ax_global.plot([], [], lw=2)
-            global_error = ax_global.errorbar([], [], yerr=[], fmt="none", capsize=2, alpha=0.7 )
-            ax_global.set_xlim(FREQ_MIN_HZ, FREQ_MAX_HZ)
-            ax_global.set_ylim(POWER_MIN, POWER_MAX)
-            ax_global.set_yscale("log")
-            ax_global.set_xlabel("Frequency (Hz)")
-            ax_global.set_ylabel("Power")
-            ax_global.grid(True)
-
-            worker_plots = {}
-            for column, w_id in enumerate(sorted(worker_states)):
-                # Setup individual worker spectrum plot
-                spectrum_axis = fig.add_subplot(grid[1, column])
-                spectrum_line, = spectrum_axis.plot([], [], lw=1.5)
-                spectrum_axis.set_xlim(FREQ_MIN_HZ, FREQ_MAX_HZ)
-                spectrum_axis.set_ylim(POWER_MIN, POWER_MAX)
-                spectrum_axis.set_yscale("log")
-                spectrum_axis.grid(True)
-                spectrum_axis.set_xlabel("Frequency (Hz)")
-                spectrum_axis.set_ylabel("Power")
-
-                # Setup text box for worker logs
-                log_axis = fig.add_subplot(grid[2, column])
-                log_axis.axis("off")
-                log_text = log_axis.text(0, 1, "", transform=log_axis.transAxes, va="top", fontsize=8)
-
-                worker_plots[w_id] = {
-                    "spectrum_axis": spectrum_axis,
-                    "spectrum_line": spectrum_line,
-                    "log_text": log_text
-                }
-
-        # Draw the latest data on the global plot
-        if global_power_means is not None:
-            global_power_safe = np.maximum(global_power_means, 1e-12)
-
-            global_line.set_data(global_frequencies, global_power_safe)
-
-            # M2 -> standard deviation
-            if global_n_averaged_scans > 1:
-                variance = global_power_M2s / (global_n_averaged_scans - 1)
-
-                sigma = np.sqrt(variance)
-                global_error.remove()
-                global_error = ax_global.errorbar(global_frequencies, global_power_safe, yerr=sigma, fmt="none", capsize=2, alpha=0.7)
-
-            elapsed_time = time.time() - plot_start_time
-
-            ax_global.set_title(f"Cumulative Mean Spectrum ({global_n_averaged_scans} scans, elapsed {elapsed_time:.1f} s)")
-
-        current_time = time.time()
-        
-        # Iterate over all workers to update their subplots and text logs
-        for w_id in sorted(worker_states):
-            worker = worker_states[w_id]
-            plot = worker_plots[w_id]
-
-            #plot["spectrum_line"].set_data(worker["frequencies"], worker["power_means"])
-            plot["spectrum_axis"].set_title(f"Worker {w_id}")
-
-            freqs = worker["frequencies"]
-            power = worker["power_means"]
-            power = np.maximum(power, 1e-12)
-
-            freqs = worker["frequencies"]
-            power = np.maximum(worker["power_means"], 1e-12)
-            plot["spectrum_line"].set_data(freqs, power)
-
-            age_seconds = current_time - worker["receive_tss"][-1]
-            
-            log_lines = [
-                f"Total scans: {worker['n_averaged_scans']}",
-                f"Age: {age_seconds:.1f} s",
-            ]
-
-            # Calculate average time between received updates
-            if len(worker["receive_tss"]) < 2:
-                log_lines.append("Avg update: --")
-            else:
-                log_lines.append(f"Avg update: {np.mean(np.diff(worker['receive_tss'])):.2f} s")
-
-            log_lines.extend([
-                "",
-                "Recent updates (Net & FFT Latency)",
-                "-" * 38
-            ])
-            log_lines.extend(worker["log"])
-
-            # Refresh the text area
-            plot["log_text"].set_text("\n".join(log_lines))
-
-        # Render the updated graphics to the screen
-        fig.canvas.draw_idle()
-        fig.canvas.flush_events()
-except eof_exit:
-    pass
+                update_states(msg)
+                benchmark_logger.update(msg)
+            dashboard.update()
 finally:
-    finish_ts = time.time()
-
-    benchmark_output = {
-            "throughput": throughput,
-            "n_scans_per_batch": n_scans_per_batch,
-            "finish_ts": finish_ts,
-            "analysis_time": elapsed_time,
-            "data": benchmark_records
-    }
-
-    with open(BENCHMARK_FILE, "w") as f:
-        json.dump(benchmark_output, f, indent=2)
-
-    print(f"Benchmark written to {BENCHMARK_FILE}")
-
-    # Close the Kafka connection
+    benchmark_logger.close()
     consumer.close()
-
-input("Press Enter to exit...")
