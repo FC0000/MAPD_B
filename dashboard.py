@@ -83,6 +83,7 @@ class BenchmarkLogger:
 
         self.throughput_MB = None
         self.n_scans_per_batch = None
+        self.n_workers = None
         self.n_partitions = None
 
         self.producer_begin_ts = None
@@ -100,6 +101,7 @@ class BenchmarkLogger:
             f"{readable_ts}--"
             f"{self.throughput_MB}MBps--"
             f"{self.n_scans_per_batch}SpB--"
+            f"{self.n_workers}ws--"
             f"{self.n_partitions}parts"
             f"{suffix}"
         )
@@ -110,6 +112,7 @@ class BenchmarkLogger:
         self.throughput_MB = results["throughput_MB"]
         self.n_scans_per_batch = results["n_scans_per_batch"]
         self.n_partitions = results["n_partitions"]
+        self.n_workers = results["n_workers"]
         self.started = True
 
     def close(self, results):
@@ -128,6 +131,7 @@ class BenchmarkLogger:
             
         benchmark_output = {
             "throughput_MB": self.throughput_MB,
+            "n_workers": self.n_workers,
             "n_partitions": self.n_partitions,
             "n_scans_per_batch": self.n_scans_per_batch,
             "producer_begin_ts": self.producer_begin_ts,
