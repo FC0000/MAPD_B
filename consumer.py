@@ -16,7 +16,7 @@ FREQ_MAX_HZ = 1.1e6
 POWER_MIN = 1e-4
 POWER_MAX = 30
 
-BENCHMARK_FILE = "benchmark_1.json"
+BENCHMARK_FILE = "benchmark_try1.json"
 
 
 # =============================================================================
@@ -189,9 +189,10 @@ try:
                         "worker_id": worker_id,
                         "n_averaged_scans": worker["n_averaged_scans"],
                         "production_tss": worker["producer_tss"],
-                        "fft_latencies_ms": fft_latencies,
-                        "waiting_times": worker["waiting_times"],
                         "receive_tss": worker["receive_tss"],
+                        "net_latencies_ms": net_latencies_ms,
+                        "fft_latencies_ms": fft_latencies,
+                        "waiting_times": worker["waiting_times"]
                     })
                     
 
@@ -323,11 +324,12 @@ finally:
             "throughput": throughput,
             "n_scans_per_batch": n_scans_per_batch,
             "finish_ts": finish_ts,
+            "analysis_time": elapsed_time,
             "data": benchmark_records
     }
 
     with open(BENCHMARK_FILE, "w") as f:
-        f.write(json.dump(benchmark_output))
+        json.dump(benchmark_output, f, indent=2)
 
     print(f"Benchmark written to {BENCHMARK_FILE}")
 
