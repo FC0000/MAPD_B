@@ -1,0 +1,75 @@
+metric=avg_processing_time_ms
+variable=partition_worker_ratio
+facet_variable=n_scans
+throughput=16
+n_workers=3
+
+### n_scans=512
+partition_worker_ratio=1
+mean_avg_processing_time_ms=32.019259666940926
+std_avg_processing_time_ms=0.021347054738020788
+sem_avg_processing_time_ms=0.015094647163614916
+    benchmarks/2026-07-15_17-35-04--16MBps--512SpB--3ws--3parts.json
+    benchmarks/2026-07-15_17-32-10--16MBps--512SpB--3ws--3parts.json
+
+partition_worker_ratio=2
+mean_avg_processing_time_ms=33.682737325106764
+std_avg_processing_time_ms=0.6086164703475032
+sem_avg_processing_time_ms=0.3513848829883709
+    benchmarks/2026-07-15_18-55-55--16MBps--512SpB--3ws--6parts.json
+    benchmarks/2026-07-15_18-58-49--16MBps--512SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-01-43--16MBps--512SpB--3ws--6parts.json
+
+### n_scans=1024
+partition_worker_ratio=1
+mean_avg_processing_time_ms=54.03562591969622
+std_avg_processing_time_ms=0.7927058383844316
+sem_avg_processing_time_ms=0.45766892917943963
+    benchmarks/2026-07-15_17-58-41--16MBps--1024SpB--3ws--3parts.json
+    benchmarks/2026-07-15_17-40-53--16MBps--1024SpB--3ws--3parts.json
+    benchmarks/2026-07-15_17-55-47--16MBps--1024SpB--3ws--3parts.json
+
+partition_worker_ratio=2
+mean_avg_processing_time_ms=57.55934923878959
+std_avg_processing_time_ms=1.4223294223961422
+sem_avg_processing_time_ms=0.8211822748967377
+    benchmarks/2026-07-15_19-04-37--16MBps--1024SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-31-59--16MBps--1024SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-34-54--16MBps--1024SpB--3ws--6parts.json
+
+### n_scans=2048
+partition_worker_ratio=1
+mean_avg_processing_time_ms=107.4884367317477
+std_avg_processing_time_ms=2.0549112844185005
+sem_avg_processing_time_ms=1.186403583219821
+    benchmarks/2026-07-15_18-26-42--16MBps--2048SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-07-24--16MBps--2048SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-19-43--16MBps--2048SpB--3ws--3parts.json
+
+partition_worker_ratio=2
+mean_avg_processing_time_ms=110.03292536751682
+std_avg_processing_time_ms=5.445689155511137
+sem_avg_processing_time_ms=2.435386227211265
+    benchmarks/2026-07-15_19-16-14--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_21-15-24--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_20-22-07--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-37-48--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_21-12-30--16MBps--2048SpB--3ws--6parts.json
+
+### n_scans=4096
+partition_worker_ratio=1
+mean_avg_processing_time_ms=210.10121460002156
+std_avg_processing_time_ms=1.971325734710803
+sem_avg_processing_time_ms=1.138145443595719
+    benchmarks/2026-07-15_18-29-37--16MBps--4096SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-50-20--16MBps--4096SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-46-26--16MBps--4096SpB--3ws--3parts.json
+
+partition_worker_ratio=2
+mean_avg_processing_time_ms=217.25648540568181
+std_avg_processing_time_ms=20.199028990246997
+sem_avg_processing_time_ms=11.661914824888159
+    benchmarks/2026-07-15_21-21-13--16MBps--4096SpB--3ws--6parts.json
+    benchmarks/2026-07-15_20-26-40--16MBps--4096SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-24-57--16MBps--4096SpB--3ws--6parts.json
+

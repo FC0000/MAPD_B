@@ -1,0 +1,8 @@
+run=benchmarks/2026-07-15_16-09-02--16MBps--2048SpB--4ws--4parts.json
+throughput=16
+n_scans=2048
+n_workers=4
+n_partitions=4
+
+batch_latency_ms: mean=9629.02743201102, p50=7828.2647132873535, p95=17367.61429309844, n=62
+processing_time_ms: mean=118.18563772530686, p50=128.74247749277856, p95=138.8320895493962, n=62

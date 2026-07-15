@@ -1,0 +1,74 @@
+metric=avg_net_latency_ms
+variable=partition_worker_ratio
+facet_variable=n_scans
+throughput=16
+n_workers=4
+
+### n_scans=512
+partition_worker_ratio=1
+mean_avg_net_latency_ms=3741.7949537436166
+std_avg_net_latency_ms=407.66492548548894
+sem_avg_net_latency_ms=235.36545446821577
+    benchmarks/2026-07-15_15-51-37--16MBps--512SpB--4ws--4parts.json
+    benchmarks/2026-07-15_15-48-43--16MBps--512SpB--4ws--4parts.json
+    benchmarks/2026-07-15_15-45-49--16MBps--512SpB--4ws--4parts.json
+
+partition_worker_ratio=2
+mean_avg_net_latency_ms=4521.863790929959
+std_avg_net_latency_ms=540.3747269385665
+sem_avg_net_latency_ms=311.98549406125187
+    benchmarks/2026-07-15_16-36-39--16MBps--512SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-39-33--16MBps--512SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-42-27--16MBps--512SpB--4ws--8parts.json
+
+### n_scans=1024
+partition_worker_ratio=1
+mean_avg_net_latency_ms=7474.035048997531
+std_avg_net_latency_ms=1182.7965850703251
+sem_avg_net_latency_ms=682.8879267869223
+    benchmarks/2026-07-15_15-57-25--16MBps--1024SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-00-20--16MBps--1024SpB--4ws--4parts.json
+    benchmarks/2026-07-15_15-54-31--16MBps--1024SpB--4ws--4parts.json
+
+partition_worker_ratio=2
+mean_avg_net_latency_ms=7678.251977889769
+std_avg_net_latency_ms=1047.1462528536404
+sem_avg_net_latency_ms=604.5701709659572
+    benchmarks/2026-07-15_16-45-21--16MBps--1024SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-48-16--16MBps--1024SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-51-10--16MBps--1024SpB--4ws--8parts.json
+
+### n_scans=2048
+partition_worker_ratio=1
+mean_avg_net_latency_ms=10671.291706382588
+std_avg_net_latency_ms=1065.8911947642548
+sem_avg_net_latency_ms=615.3925682239943
+    benchmarks/2026-07-15_16-03-14--16MBps--2048SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-06-08--16MBps--2048SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-09-02--16MBps--2048SpB--4ws--4parts.json
+
+partition_worker_ratio=2
+mean_avg_net_latency_ms=9914.636941366298
+std_avg_net_latency_ms=466.0308692059353
+sem_avg_net_latency_ms=269.06304778672205
+    benchmarks/2026-07-15_16-59-53--16MBps--2048SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-56-58--16MBps--2048SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-54-04--16MBps--2048SpB--4ws--8parts.json
+
+### n_scans=4096
+partition_worker_ratio=1
+mean_avg_net_latency_ms=19258.13614937567
+std_avg_net_latency_ms=1149.4550768400504
+sem_avg_net_latency_ms=663.6381980349851
+    benchmarks/2026-07-15_16-11-57--16MBps--4096SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-14-51--16MBps--4096SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-17-45--16MBps--4096SpB--4ws--4parts.json
+
+partition_worker_ratio=2
+mean_avg_net_latency_ms=20164.388477161367
+std_avg_net_latency_ms=2948.9728664107033
+sem_avg_net_latency_ms=1702.590278255122
+    benchmarks/2026-07-15_17-18-42--16MBps--4096SpB--4ws--8parts.json
+    benchmarks/2026-07-15_17-26-46--16MBps--4096SpB--4ws--8parts.json
+    benchmarks/2026-07-15_17-02-47--16MBps--4096SpB--4ws--8parts.json
+

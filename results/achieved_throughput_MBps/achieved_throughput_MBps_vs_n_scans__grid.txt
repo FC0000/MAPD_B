@@ -1,0 +1,135 @@
+metric=achieved_throughput_MBps
+
+### throughput=16 n_workers=3 n_partitions=3
+n_scans=512
+mean_achieved_throughput_MBps=13.952511521802364
+std_achieved_throughput_MBps=0.1409933162443906
+sem_achieved_throughput_MBps=0.09969733001838799
+    benchmarks/2026-07-15_17-35-04--16MBps--512SpB--3ws--3parts.json
+    benchmarks/2026-07-15_17-32-10--16MBps--512SpB--3ws--3parts.json
+
+n_scans=1024
+mean_achieved_throughput_MBps=14.254147029721585
+std_achieved_throughput_MBps=0.5219852413961572
+sem_achieved_throughput_MBps=0.3013683196330832
+    benchmarks/2026-07-15_17-58-41--16MBps--1024SpB--3ws--3parts.json
+    benchmarks/2026-07-15_17-40-53--16MBps--1024SpB--3ws--3parts.json
+    benchmarks/2026-07-15_17-55-47--16MBps--1024SpB--3ws--3parts.json
+
+n_scans=2048
+mean_achieved_throughput_MBps=13.59908692683767
+std_achieved_throughput_MBps=0.31949028029820276
+sem_achieved_throughput_MBps=0.18445779933363637
+    benchmarks/2026-07-15_18-26-42--16MBps--2048SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-07-24--16MBps--2048SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-19-43--16MBps--2048SpB--3ws--3parts.json
+
+n_scans=4096
+mean_achieved_throughput_MBps=13.379004166532377
+std_achieved_throughput_MBps=0.8352017277691234
+sem_achieved_throughput_MBps=0.48220394235514397
+    benchmarks/2026-07-15_18-29-37--16MBps--4096SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-50-20--16MBps--4096SpB--3ws--3parts.json
+    benchmarks/2026-07-15_18-46-26--16MBps--4096SpB--3ws--3parts.json
+
+### throughput=16 n_workers=3 n_partitions=6
+n_scans=512
+mean_achieved_throughput_MBps=14.295258251762684
+std_achieved_throughput_MBps=0.3757793925383868
+sem_achieved_throughput_MBps=0.2169563334379517
+    benchmarks/2026-07-15_18-55-55--16MBps--512SpB--3ws--6parts.json
+    benchmarks/2026-07-15_18-58-49--16MBps--512SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-01-43--16MBps--512SpB--3ws--6parts.json
+
+n_scans=1024
+mean_achieved_throughput_MBps=13.3492316731477
+std_achieved_throughput_MBps=0.8573981180442928
+sem_achieved_throughput_MBps=0.495019034255551
+    benchmarks/2026-07-15_19-04-37--16MBps--1024SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-31-59--16MBps--1024SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-34-54--16MBps--1024SpB--3ws--6parts.json
+
+n_scans=2048
+mean_achieved_throughput_MBps=13.305781435215518
+std_achieved_throughput_MBps=1.0308533765382273
+sem_achieved_throughput_MBps=0.4610116449549326
+    benchmarks/2026-07-15_19-16-14--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_21-15-24--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_20-22-07--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-37-48--16MBps--2048SpB--3ws--6parts.json
+    benchmarks/2026-07-15_21-12-30--16MBps--2048SpB--3ws--6parts.json
+
+n_scans=4096
+mean_achieved_throughput_MBps=12.534477961221066
+std_achieved_throughput_MBps=0.2524521095941588
+sem_achieved_throughput_MBps=0.1457532934316765
+    benchmarks/2026-07-15_21-21-13--16MBps--4096SpB--3ws--6parts.json
+    benchmarks/2026-07-15_20-26-40--16MBps--4096SpB--3ws--6parts.json
+    benchmarks/2026-07-15_19-24-57--16MBps--4096SpB--3ws--6parts.json
+
+### throughput=16 n_workers=4 n_partitions=4
+n_scans=512
+mean_achieved_throughput_MBps=15.384084629889808
+std_achieved_throughput_MBps=0.2961605196712599
+sem_achieved_throughput_MBps=0.17098835575554136
+    benchmarks/2026-07-15_15-51-37--16MBps--512SpB--4ws--4parts.json
+    benchmarks/2026-07-15_15-48-43--16MBps--512SpB--4ws--4parts.json
+    benchmarks/2026-07-15_15-45-49--16MBps--512SpB--4ws--4parts.json
+
+n_scans=1024
+mean_achieved_throughput_MBps=14.997835996432164
+std_achieved_throughput_MBps=0.019047000234493863
+sem_achieved_throughput_MBps=0.010996790712639898
+    benchmarks/2026-07-15_15-57-25--16MBps--1024SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-00-20--16MBps--1024SpB--4ws--4parts.json
+    benchmarks/2026-07-15_15-54-31--16MBps--1024SpB--4ws--4parts.json
+
+n_scans=2048
+mean_achieved_throughput_MBps=14.608694603675751
+std_achieved_throughput_MBps=0.09241534188962666
+sem_achieved_throughput_MBps=0.05335602251722726
+    benchmarks/2026-07-15_16-03-14--16MBps--2048SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-06-08--16MBps--2048SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-09-02--16MBps--2048SpB--4ws--4parts.json
+
+n_scans=4096
+mean_achieved_throughput_MBps=13.259364681103426
+std_achieved_throughput_MBps=0.8810691220511535
+sem_achieved_throughput_MBps=0.5086854947909007
+    benchmarks/2026-07-15_16-11-57--16MBps--4096SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-14-51--16MBps--4096SpB--4ws--4parts.json
+    benchmarks/2026-07-15_16-17-45--16MBps--4096SpB--4ws--4parts.json
+
+### throughput=16 n_workers=4 n_partitions=8
+n_scans=512
+mean_achieved_throughput_MBps=15.331074898167207
+std_achieved_throughput_MBps=0.3417571298454926
+sem_achieved_throughput_MBps=0.19731357091376905
+    benchmarks/2026-07-15_16-36-39--16MBps--512SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-39-33--16MBps--512SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-42-27--16MBps--512SpB--4ws--8parts.json
+
+n_scans=1024
+mean_achieved_throughput_MBps=14.33698805263154
+std_achieved_throughput_MBps=0.36952335686673005
+sem_achieved_throughput_MBps=0.21334440955886075
+    benchmarks/2026-07-15_16-45-21--16MBps--1024SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-48-16--16MBps--1024SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-51-10--16MBps--1024SpB--4ws--8parts.json
+
+n_scans=2048
+mean_achieved_throughput_MBps=14.92679774634685
+std_achieved_throughput_MBps=0.09631192154418694
+sem_achieved_throughput_MBps=0.05560571382970645
+    benchmarks/2026-07-15_16-59-53--16MBps--2048SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-56-58--16MBps--2048SpB--4ws--8parts.json
+    benchmarks/2026-07-15_16-54-04--16MBps--2048SpB--4ws--8parts.json
+
+n_scans=4096
+mean_achieved_throughput_MBps=13.336578467480775
+std_achieved_throughput_MBps=0.9195772162940716
+sem_achieved_throughput_MBps=0.530918153368029
+    benchmarks/2026-07-15_17-18-42--16MBps--4096SpB--4ws--8parts.json
+    benchmarks/2026-07-15_17-26-46--16MBps--4096SpB--4ws--8parts.json
+    benchmarks/2026-07-15_17-02-47--16MBps--4096SpB--4ws--8parts.json
+
