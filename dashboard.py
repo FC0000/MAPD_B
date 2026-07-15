@@ -118,7 +118,9 @@ class BenchmarkLogger:
         self.n_scans_per_batch = begin_signal.n_scans_per_batch
         self.n_partitions = begin_signal.n_partitions
         self.n_total_scans = begin_signal.total_n_scans
+        self.producer_end_ts=None
         self.workers = []
+        self.records = []
         self.started = True
         self.finished = False
         self.received_end_signal = False
