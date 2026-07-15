@@ -1,4 +1,4 @@
-## Streaming processing of the QUAX experiment data with Dask and Kafka
+# Streaming processing of the QUAX experiment data with Dask and Kafka
 
 ## Overview
 
