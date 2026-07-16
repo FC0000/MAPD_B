@@ -2,10 +2,11 @@ metric=avg_net_latency_ms
 
 ### throughput=16 n_workers=3 n_partitions=3
 n_scans=512
-mean_avg_net_latency_ms=8033.98099685869
-std_avg_net_latency_ms=537.1694963785912
-sem_avg_net_latency_ms=379.8361935358644
+mean_avg_net_latency_ms=7799.225633743062
+std_avg_net_latency_ms=550.079575682332
+sem_avg_net_latency_ms=317.5885910959095
     benchmarks/2026-07-15_17-35-04--16MBps--512SpB--3ws--3parts.json
+    benchmarks/2026-07-15_21-37-50--16MBps--512SpB--3ws--3parts.json
     benchmarks/2026-07-15_17-32-10--16MBps--512SpB--3ws--3parts.json
 
 n_scans=1024

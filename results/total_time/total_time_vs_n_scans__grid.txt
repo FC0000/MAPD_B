@@ -2,10 +2,11 @@ metric=total_time
 
 ### throughput=16 n_workers=3 n_partitions=3
 n_scans=512
-mean_total_time=142.21114349365234
-std_total_time=1.4370760917663574
-sem_total_time=1.0161662495690524
+mean_total_time=142.34468523661295
+std_total_time=1.1884690109170826
+sem_total_time=0.686162903376506
     benchmarks/2026-07-15_17-35-04--16MBps--512SpB--3ws--3parts.json
+    benchmarks/2026-07-15_21-37-50--16MBps--512SpB--3ws--3parts.json
     benchmarks/2026-07-15_17-32-10--16MBps--512SpB--3ws--3parts.json
 
 n_scans=1024

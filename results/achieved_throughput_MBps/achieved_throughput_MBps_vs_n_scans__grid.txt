@@ -2,10 +2,11 @@ metric=achieved_throughput_MBps
 
 ### throughput=16 n_workers=3 n_partitions=3
 n_scans=512
-mean_achieved_throughput_MBps=13.952511521802364
-std_achieved_throughput_MBps=0.1409933162443906
-sem_achieved_throughput_MBps=0.09969733001838799
+mean_achieved_throughput_MBps=13.938972792851596
+std_achieved_throughput_MBps=0.11670191877999231
+sem_achieved_throughput_MBps=0.0673778842225744
     benchmarks/2026-07-15_17-35-04--16MBps--512SpB--3ws--3parts.json
+    benchmarks/2026-07-15_21-37-50--16MBps--512SpB--3ws--3parts.json
     benchmarks/2026-07-15_17-32-10--16MBps--512SpB--3ws--3parts.json
 
 n_scans=1024

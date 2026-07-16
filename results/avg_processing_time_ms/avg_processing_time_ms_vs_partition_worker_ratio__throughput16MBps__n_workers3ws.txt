@@ -6,10 +6,11 @@ n_workers=3
 
 ### n_scans=512
 partition_worker_ratio=1
-mean_avg_processing_time_ms=32.019259666940926
-std_avg_processing_time_ms=0.021347054738020788
-sem_avg_processing_time_ms=0.015094647163614916
+mean_avg_processing_time_ms=33.86096753272276
+std_avg_processing_time_ms=2.6046265612551833
+sem_avg_processing_time_ms=1.5037818462791295
     benchmarks/2026-07-15_17-35-04--16MBps--512SpB--3ws--3parts.json
+    benchmarks/2026-07-15_21-37-50--16MBps--512SpB--3ws--3parts.json
     benchmarks/2026-07-15_17-32-10--16MBps--512SpB--3ws--3parts.json
 
 partition_worker_ratio=2
