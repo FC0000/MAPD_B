@@ -86,8 +86,10 @@ class WorkerState:
         self.last_power_means = update_msg.power_means
         self.last_power_M2s = update_msg.power_M2s
         self.last_n_scans = update_msg.n_scans
+        batch_time_s = update_msg.receive_ts - update_msg.producer_ts
+        processing_time_ms = update_msg.processing_time * 1000
 
-        self.log.appendleft(f"{time.strftime('%H:%M:%S')} | {self.last_n_scans} scans, ...")
+        self.log.appendleft(f"{time.strftime('%H:%M:%S')} | batch wall time={batch_time_s:.1f}s, cpu-time={processing_time_ms:.0f}ms")
 
 worker_states = {}
 
@@ -118,9 +120,9 @@ class BenchmarkLogger:
         self.n_scans_per_batch = begin_signal.n_scans_per_batch
         self.n_partitions = begin_signal.n_partitions
         self.n_total_scans = begin_signal.total_n_scans
-        self.producer_end_ts=None
         self.workers = []
         self.records = []
+        self.producer_end_ts = None
         self.started = True
         self.finished = False
         self.received_end_signal = False
