@@ -1,0 +1,2244 @@
+{
+  "throughput_MB": 16,
+  "n_workers": 4,
+  "n_partitions": 4,
+  "n_total_scans": 126976,
+  "n_scans_per_batch": 512,
+  "producer_begin_ts": 1784123149.037,
+  "producer_end_ts": 1784123273.041,
+  "analysis_end_ts": 1784123276.208618,
+  "records": [
+    {
+      "worker_id": 1,
+      "result_ts": 1784123150.587,
+      "receive_ts": 1784123151.30027,
+      "n_scans": 512,
+      "production_ts": 1784123149.042,
+      "batch_latency_ms": 2258.270025253296,
+      "processing_time_ms": 33.38556700327899
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123151.134,
+      "receive_ts": 1784123151.8671203,
+      "n_scans": 512,
+      "production_ts": 1784123149.542,
+      "batch_latency_ms": 2325.120210647583,
+      "processing_time_ms": 32.171405997360125
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123152.105,
+      "receive_ts": 1784123153.0539587,
+      "n_scans": 512,
+      "production_ts": 1784123150.042,
+      "batch_latency_ms": 3011.958599090576,
+      "processing_time_ms": 32.595734010101296
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123152.737,
+      "receive_ts": 1784123153.5509217,
+      "n_scans": 512,
+      "production_ts": 1784123150.542,
+      "batch_latency_ms": 3008.9216232299805,
+      "processing_time_ms": 31.814864996704273
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123153.306,
+      "receive_ts": 1784123154.0802982,
+      "n_scans": 512,
+      "production_ts": 1784123152.042,
+      "batch_latency_ms": 2038.2981300354004,
+      "processing_time_ms": 17.21195300342515
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123153.66,
+      "receive_ts": 1784123154.4385166,
+      "n_scans": 512,
+      "production_ts": 1784123151.042,
+      "batch_latency_ms": 3396.5165615081787,
+      "processing_time_ms": 33.97707300609909
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123154.141,
+      "receive_ts": 1784123155.0565178,
+      "n_scans": 512,
+      "production_ts": 1784123152.542,
+      "batch_latency_ms": 2514.5177841186523,
+      "processing_time_ms": 33.22296901023947
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123154.362,
+      "receive_ts": 1784123155.4916146,
+      "n_scans": 512,
+      "production_ts": 1784123151.542,
+      "batch_latency_ms": 3949.6145248413086,
+      "processing_time_ms": 32.25700798793696
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123154.783,
+      "receive_ts": 1784123155.8237598,
+      "n_scans": 512,
+      "production_ts": 1784123153.542,
+      "batch_latency_ms": 2281.759738922119,
+      "processing_time_ms": 17.946366002433933
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123156.237,
+      "receive_ts": 1784123157.2488883,
+      "n_scans": 512,
+      "production_ts": 1784123154.542,
+      "batch_latency_ms": 2706.888198852539,
+      "processing_time_ms": 31.306200005928986
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123157.48,
+      "receive_ts": 1784123158.3480668,
+      "n_scans": 512,
+      "production_ts": 1784123153.042,
+      "batch_latency_ms": 5306.0667514801025,
+      "processing_time_ms": 31.169713009148836
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123157.53,
+      "receive_ts": 1784123158.6970837,
+      "n_scans": 512,
+      "production_ts": 1784123154.042,
+      "batch_latency_ms": 4655.083656311035,
+      "processing_time_ms": 47.11810199660249
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123157.682,
+      "receive_ts": 1784123158.6973267,
+      "n_scans": 512,
+      "production_ts": 1784123156.042,
+      "batch_latency_ms": 2655.3266048431396,
+      "processing_time_ms": 36.455082008615136
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123158.287,
+      "receive_ts": 1784123159.4634407,
+      "n_scans": 512,
+      "production_ts": 1784123157.042,
+      "batch_latency_ms": 2421.440601348877,
+      "processing_time_ms": 17.495936001068912
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123159.295,
+      "receive_ts": 1784123160.202848,
+      "n_scans": 512,
+      "production_ts": 1784123156.542,
+      "batch_latency_ms": 3660.8479022979736,
+      "processing_time_ms": 31.94012500171084
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123159.47,
+      "receive_ts": 1784123160.5752494,
+      "n_scans": 512,
+      "production_ts": 1784123158.042,
+      "batch_latency_ms": 2533.2493782043457,
+      "processing_time_ms": 17.94022400281392
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123159.513,
+      "receive_ts": 1784123160.5755267,
+      "n_scans": 512,
+      "production_ts": 1784123155.042,
+      "batch_latency_ms": 5533.526659011841,
+      "processing_time_ms": 31.833132001338527
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123159.566,
+      "receive_ts": 1784123160.5756972,
+      "n_scans": 512,
+      "production_ts": 1784123155.542,
+      "batch_latency_ms": 5033.697128295898,
+      "processing_time_ms": 44.043550005881116
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123160.638,
+      "receive_ts": 1784123161.6871564,
+      "n_scans": 512,
+      "production_ts": 1784123158.542,
+      "batch_latency_ms": 3145.1563835144043,
+      "processing_time_ms": 17.80790499469731
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123160.922,
+      "receive_ts": 1784123162.0461276,
+      "n_scans": 512,
+      "production_ts": 1784123157.542,
+      "batch_latency_ms": 4504.127502441406,
+      "processing_time_ms": 33.3207469957415
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123161.825,
+      "receive_ts": 1784123162.7479014,
+      "n_scans": 512,
+      "production_ts": 1784123160.542,
+      "batch_latency_ms": 2205.9013843536377,
+      "processing_time_ms": 17.701314005535096
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123162.536,
+      "receive_ts": 1784123163.5016096,
+      "n_scans": 512,
+      "production_ts": 1784123160.042,
+      "batch_latency_ms": 3459.6095085144043,
+      "processing_time_ms": 34.65354499348905
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123162.783,
+      "receive_ts": 1784123163.0163684,
+      "n_scans": 512,
+      "production_ts": 1784123159.042,
+      "batch_latency_ms": 3974.3683338165283,
+      "processing_time_ms": 35.02962899801787
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123162.835,
+      "receive_ts": 1784123163.4178808,
+      "n_scans": 512,
+      "production_ts": 1784123159.542,
+      "batch_latency_ms": 3875.880718231201,
+      "processing_time_ms": 44.33868499472737
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123162.988,
+      "receive_ts": 1784123163.4181411,
+      "n_scans": 512,
+      "production_ts": 1784123161.542,
+      "batch_latency_ms": 1876.14107131958,
+      "processing_time_ms": 18.1536669988418
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123164.187,
+      "receive_ts": 1784123164.2640345,
+      "n_scans": 512,
+      "production_ts": 1784123161.042,
+      "batch_latency_ms": 3222.034454345703,
+      "processing_time_ms": 34.57918600179255
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123164.736,
+      "receive_ts": 1784123164.9761546,
+      "n_scans": 512,
+      "production_ts": 1784123163.542,
+      "batch_latency_ms": 1434.1545104980469,
+      "processing_time_ms": 17.91806200344581
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123165.91,
+      "receive_ts": 1784123166.1769528,
+      "n_scans": 512,
+      "production_ts": 1784123164.542,
+      "batch_latency_ms": 1634.9527835845947,
+      "processing_time_ms": 18.14095200097654
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123168.214,
+      "receive_ts": 1784123168.651907,
+      "n_scans": 512,
+      "production_ts": 1784123165.042,
+      "batch_latency_ms": 3609.9069118499756,
+      "processing_time_ms": 18.14833699609153
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123168.246,
+      "receive_ts": 1784123168.6521482,
+      "n_scans": 512,
+      "production_ts": 1784123165.542,
+      "batch_latency_ms": 3110.1481914520264,
+      "processing_time_ms": 28.934056012076326
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123168.229,
+      "receive_ts": 1784123168.6522923,
+      "n_scans": 512,
+      "production_ts": 1784123166.542,
+      "batch_latency_ms": 2110.2921962738037,
+      "processing_time_ms": 34.571662996313535
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123169.11,
+      "receive_ts": 1784123169.3841329,
+      "n_scans": 512,
+      "production_ts": 1784123162.042,
+      "batch_latency_ms": 7342.132806777954,
+      "processing_time_ms": 35.914092004531994
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123169.164,
+      "receive_ts": 1784123169.7779298,
+      "n_scans": 512,
+      "production_ts": 1784123162.542,
+      "batch_latency_ms": 7235.929727554321,
+      "processing_time_ms": 50.559737006551586
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123169.22,
+      "receive_ts": 1784123170.2301583,
+      "n_scans": 512,
+      "production_ts": 1784123163.042,
+      "batch_latency_ms": 7188.158273696899,
+      "processing_time_ms": 52.95634600042831
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123169.434,
+      "receive_ts": 1784123170.2306538,
+      "n_scans": 512,
+      "production_ts": 1784123166.042,
+      "batch_latency_ms": 4188.6537075042725,
+      "processing_time_ms": 17.748764003044926
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123169.799,
+      "receive_ts": 1784123170.6363828,
+      "n_scans": 512,
+      "production_ts": 1784123167.042,
+      "batch_latency_ms": 3594.3827629089355,
+      "processing_time_ms": 46.179513999959454
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123170.874,
+      "receive_ts": 1784123171.0549707,
+      "n_scans": 512,
+      "production_ts": 1784123164.042,
+      "batch_latency_ms": 7012.970685958862,
+      "processing_time_ms": 32.49722700275015
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123171.189,
+      "receive_ts": 1784123171.4227028,
+      "n_scans": 512,
+      "production_ts": 1784123169.542,
+      "batch_latency_ms": 1880.7027339935303,
+      "processing_time_ms": 32.28999400744215
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123171.751,
+      "receive_ts": 1784123172.1822376,
+      "n_scans": 512,
+      "production_ts": 1784123168.042,
+      "batch_latency_ms": 4140.23756980896,
+      "processing_time_ms": 17.94269899255596
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123171.781,
+      "receive_ts": 1784123172.597591,
+      "n_scans": 512,
+      "production_ts": 1784123169.042,
+      "batch_latency_ms": 3555.590867996216,
+      "processing_time_ms": 28.07913399010431
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123172.791,
+      "receive_ts": 1784123172.989454,
+      "n_scans": 512,
+      "production_ts": 1784123170.042,
+      "batch_latency_ms": 2947.4539756774902,
+      "processing_time_ms": 33.31041999626905
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123172.941,
+      "receive_ts": 1784123173.3652623,
+      "n_scans": 512,
+      "production_ts": 1784123171.542,
+      "batch_latency_ms": 1823.2622146606445,
+      "processing_time_ms": 17.970230008359067
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123173.678,
+      "receive_ts": 1784123174.1132212,
+      "n_scans": 512,
+      "production_ts": 1784123172.042,
+      "batch_latency_ms": 2071.221113204956,
+      "processing_time_ms": 32.83247599028982
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123174.06,
+      "receive_ts": 1784123174.451232,
+      "n_scans": 512,
+      "production_ts": 1784123167.542,
+      "batch_latency_ms": 6909.231901168823,
+      "processing_time_ms": 32.600029997411184
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123174.113,
+      "receive_ts": 1784123174.8978481,
+      "n_scans": 512,
+      "production_ts": 1784123168.542,
+      "batch_latency_ms": 6355.848073959351,
+      "processing_time_ms": 50.33487699984107
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123175.242,
+      "receive_ts": 1784123175.7021184,
+      "n_scans": 512,
+      "production_ts": 1784123172.542,
+      "batch_latency_ms": 3160.118341445923,
+      "processing_time_ms": 33.843130004242994
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123176.176,
+      "receive_ts": 1784123176.4504454,
+      "n_scans": 512,
+      "production_ts": 1784123174.542,
+      "batch_latency_ms": 1908.4453582763672,
+      "processing_time_ms": 33.895559012307785
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123176.246,
+      "receive_ts": 1784123176.848532,
+      "n_scans": 512,
+      "production_ts": 1784123175.042,
+      "batch_latency_ms": 1806.5319061279297,
+      "processing_time_ms": 18.105044990079477
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123176.849,
+      "receive_ts": 1784123177.2269843,
+      "n_scans": 512,
+      "production_ts": 1784123173.542,
+      "batch_latency_ms": 3684.9842071533203,
+      "processing_time_ms": 32.533108998904936
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123177.247,
+      "receive_ts": 1784123177.6105542,
+      "n_scans": 512,
+      "production_ts": 1784123170.542,
+      "batch_latency_ms": 7068.554162979126,
+      "processing_time_ms": 32.27961699303705
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123177.308,
+      "receive_ts": 1784123177.6107674,
+      "n_scans": 512,
+      "production_ts": 1784123171.042,
+      "batch_latency_ms": 6568.767309188843,
+      "processing_time_ms": 52.06499599444214
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123177.839,
+      "receive_ts": 1784123178.3727891,
+      "n_scans": 512,
+      "production_ts": 1784123176.043,
+      "batch_latency_ms": 2329.789161682129,
+      "processing_time_ms": 32.62440500839148
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123178.376,
+      "receive_ts": 1784123178.7147722,
+      "n_scans": 512,
+      "production_ts": 1784123176.542,
+      "batch_latency_ms": 2172.772169113159,
+      "processing_time_ms": 45.92832099297084
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123178.809,
+      "receive_ts": 1784123179.1278014,
+      "n_scans": 512,
+      "production_ts": 1784123177.542,
+      "batch_latency_ms": 1585.801362991333,
+      "processing_time_ms": 17.66194800438825
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123179.721,
+      "receive_ts": 1784123180.3581998,
+      "n_scans": 512,
+      "production_ts": 1784123178.042,
+      "batch_latency_ms": 2316.199779510498,
+      "processing_time_ms": 34.96696001093369
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123179.94,
+      "receive_ts": 1784123180.3583841,
+      "n_scans": 512,
+      "production_ts": 1784123177.042,
+      "batch_latency_ms": 3316.3840770721436,
+      "processing_time_ms": 43.60276099760085
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123180.467,
+      "receive_ts": 1784123181.2227373,
+      "n_scans": 512,
+      "production_ts": 1784123173.042,
+      "batch_latency_ms": 8180.737257003784,
+      "processing_time_ms": 32.34255500137806
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123180.52,
+      "receive_ts": 1784123181.6483643,
+      "n_scans": 512,
+      "production_ts": 1784123174.042,
+      "batch_latency_ms": 7606.3642501831055,
+      "processing_time_ms": 39.18796998914331
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123181.701,
+      "receive_ts": 1784123182.3946044,
+      "n_scans": 512,
+      "production_ts": 1784123180.042,
+      "batch_latency_ms": 2352.604389190674,
+      "processing_time_ms": 33.834683999884874
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123181.751,
+      "receive_ts": 1784123182.8108299,
+      "n_scans": 512,
+      "production_ts": 1784123180.542,
+      "batch_latency_ms": 2268.829822540283,
+      "processing_time_ms": 18.05070199770853
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123182.148,
+      "receive_ts": 1784123183.3027883,
+      "n_scans": 512,
+      "production_ts": 1784123175.543,
+      "batch_latency_ms": 7759.788274765015,
+      "processing_time_ms": 32.880225990084
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123182.954,
+      "receive_ts": 1784123183.664262,
+      "n_scans": 512,
+      "production_ts": 1784123179.042,
+      "batch_latency_ms": 4622.262001037598,
+      "processing_time_ms": 45.03585600468796
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123183.01,
+      "receive_ts": 1784123184.1045737,
+      "n_scans": 512,
+      "production_ts": 1784123179.542,
+      "batch_latency_ms": 4562.573671340942,
+      "processing_time_ms": 52.65928999870084
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123183.259,
+      "receive_ts": 1784123184.1053126,
+      "n_scans": 512,
+      "production_ts": 1784123182.042,
+      "batch_latency_ms": 2063.312530517578,
+      "processing_time_ms": 17.920896993018687
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123183.328,
+      "receive_ts": 1784123184.5441506,
+      "n_scans": 512,
+      "production_ts": 1784123181.042,
+      "batch_latency_ms": 3502.150535583496,
+      "processing_time_ms": 33.72653599944897
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123183.816,
+      "receive_ts": 1784123184.9469573,
+      "n_scans": 512,
+      "production_ts": 1784123178.542,
+      "batch_latency_ms": 6404.957294464111,
+      "processing_time_ms": 35.86572599306237
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123184.574,
+      "receive_ts": 1784123185.3686843,
+      "n_scans": 512,
+      "production_ts": 1784123183.042,
+      "batch_latency_ms": 2326.6842365264893,
+      "processing_time_ms": 44.43266800080892
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123184.772,
+      "receive_ts": 1784123185.8034418,
+      "n_scans": 512,
+      "production_ts": 1784123183.542,
+      "batch_latency_ms": 2261.441707611084,
+      "processing_time_ms": 18.251389992656186
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123185.705,
+      "receive_ts": 1784123186.1603148,
+      "n_scans": 512,
+      "production_ts": 1784123184.042,
+      "batch_latency_ms": 2118.314743041992,
+      "processing_time_ms": 32.965677994070575
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123186.966,
+      "receive_ts": 1784123187.4598641,
+      "n_scans": 512,
+      "production_ts": 1784123181.542,
+      "batch_latency_ms": 5917.864084243774,
+      "processing_time_ms": 35.57404500315897
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123187.022,
+      "receive_ts": 1784123187.8428707,
+      "n_scans": 512,
+      "production_ts": 1784123182.542,
+      "batch_latency_ms": 5300.870656967163,
+      "processing_time_ms": 41.757767990930006
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123187.083,
+      "receive_ts": 1784123187.8431158,
+      "n_scans": 512,
+      "production_ts": 1784123185.542,
+      "batch_latency_ms": 2301.1157512664795,
+      "processing_time_ms": 45.29085700050928
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123188.267,
+      "receive_ts": 1784123189.06656,
+      "n_scans": 512,
+      "production_ts": 1784123186.542,
+      "batch_latency_ms": 2524.55997467041,
+      "processing_time_ms": 32.79749500507023
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123188.615,
+      "receive_ts": 1784123189.4841385,
+      "n_scans": 512,
+      "production_ts": 1784123187.042,
+      "batch_latency_ms": 2442.138433456421,
+      "processing_time_ms": 44.40283900476061
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123188.764,
+      "receive_ts": 1784123189.484485,
+      "n_scans": 512,
+      "production_ts": 1784123187.542,
+      "batch_latency_ms": 1942.4848556518555,
+      "processing_time_ms": 17.658351993304677
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123190.144,
+      "receive_ts": 1784123190.7234745,
+      "n_scans": 512,
+      "production_ts": 1784123188.542,
+      "batch_latency_ms": 2181.474447250366,
+      "processing_time_ms": 32.856086996616796
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123190.265,
+      "receive_ts": 1784123191.115526,
+      "n_scans": 512,
+      "production_ts": 1784123184.542,
+      "batch_latency_ms": 6573.525905609131,
+      "processing_time_ms": 36.35624000162352
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123190.323,
+      "receive_ts": 1784123191.1157558,
+      "n_scans": 512,
+      "production_ts": 1784123185.042,
+      "batch_latency_ms": 6073.755741119385,
+      "processing_time_ms": 46.63094000716228
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123190.754,
+      "receive_ts": 1784123191.8832822,
+      "n_scans": 512,
+      "production_ts": 1784123189.542,
+      "batch_latency_ms": 2341.2821292877197,
+      "processing_time_ms": 17.9535890056286
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123191.7,
+      "receive_ts": 1784123192.2604666,
+      "n_scans": 512,
+      "production_ts": 1784123189.043,
+      "batch_latency_ms": 3217.4665927886963,
+      "processing_time_ms": 34.07206699193921
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123191.918,
+      "receive_ts": 1784123192.6587474,
+      "n_scans": 512,
+      "production_ts": 1784123190.042,
+      "batch_latency_ms": 2616.7473793029785,
+      "processing_time_ms": 17.845394992036745
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123191.985,
+      "receive_ts": 1784123192.6589966,
+      "n_scans": 512,
+      "production_ts": 1784123186.042,
+      "batch_latency_ms": 6616.99652671814,
+      "processing_time_ms": 36.91563100437634
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123193.093,
+      "receive_ts": 1784123193.9273708,
+      "n_scans": 512,
+      "production_ts": 1784123191.542,
+      "batch_latency_ms": 2385.3707313537598,
+      "processing_time_ms": 18.037685003946535
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123193.212,
+      "receive_ts": 1784123193.927584,
+      "n_scans": 512,
+      "production_ts": 1784123191.042,
+      "batch_latency_ms": 2885.5838775634766,
+      "processing_time_ms": 31.289378996007144
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123193.602,
+      "receive_ts": 1784123194.3022919,
+      "n_scans": 512,
+      "production_ts": 1784123188.042,
+      "batch_latency_ms": 6260.291814804077,
+      "processing_time_ms": 34.90275901276618
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123193.638,
+      "receive_ts": 1784123194.302506,
+      "n_scans": 512,
+      "production_ts": 1784123192.042,
+      "batch_latency_ms": 2260.5059146881104,
+      "processing_time_ms": 34.471589999157004
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123194.281,
+      "receive_ts": 1784123195.0688484,
+      "n_scans": 512,
+      "production_ts": 1784123192.542,
+      "batch_latency_ms": 2526.848316192627,
+      "processing_time_ms": 17.834803991718218
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123195.19,
+      "receive_ts": 1784123195.3536108,
+      "n_scans": 512,
+      "production_ts": 1784123193.042,
+      "batch_latency_ms": 2311.610698699951,
+      "processing_time_ms": 30.754309991607442
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123195.25,
+      "receive_ts": 1784123195.3538513,
+      "n_scans": 512,
+      "production_ts": 1784123190.542,
+      "batch_latency_ms": 4811.851263046265,
+      "processing_time_ms": 35.130233009113
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123196.673,
+      "receive_ts": 1784123196.9670782,
+      "n_scans": 512,
+      "production_ts": 1784123193.542,
+      "batch_latency_ms": 3425.0781536102295,
+      "processing_time_ms": 17.902902996866032
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123196.703,
+      "receive_ts": 1784123197.456685,
+      "n_scans": 512,
+      "production_ts": 1784123194.042,
+      "batch_latency_ms": 3414.685010910034,
+      "processing_time_ms": 28.22422600002028
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123196.764,
+      "receive_ts": 1784123197.4572856,
+      "n_scans": 512,
+      "production_ts": 1784123194.542,
+      "batch_latency_ms": 2915.285587310791,
+      "processing_time_ms": 33.074525999836624
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123196.879,
+      "receive_ts": 1784123197.4575655,
+      "n_scans": 512,
+      "production_ts": 1784123195.042,
+      "batch_latency_ms": 2415.5654907226562,
+      "processing_time_ms": 34.1821829933906
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123197.974,
+      "receive_ts": 1784123198.2439742,
+      "n_scans": 512,
+      "production_ts": 1784123196.542,
+      "batch_latency_ms": 1701.9741535186768,
+      "processing_time_ms": 17.65406399499625
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123198.333,
+      "receive_ts": 1784123198.6513152,
+      "n_scans": 512,
+      "production_ts": 1784123195.542,
+      "batch_latency_ms": 3109.3151569366455,
+      "processing_time_ms": 31.574936001561582
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123198.641,
+      "receive_ts": 1784123199.039465,
+      "n_scans": 512,
+      "production_ts": 1784123197.042,
+      "batch_latency_ms": 1997.464895248413,
+      "processing_time_ms": 33.334362000459805
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123199.076,
+      "receive_ts": 1784123199.4467432,
+      "n_scans": 512,
+      "production_ts": 1784123197.542,
+      "batch_latency_ms": 1904.7431945800781,
+      "processing_time_ms": 32.86626600311138
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123199.276,
+      "receive_ts": 1784123199.446999,
+      "n_scans": 512,
+      "production_ts": 1784123198.042,
+      "batch_latency_ms": 1404.999017715454,
+      "processing_time_ms": 17.60892799939029
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123199.893,
+      "receive_ts": 1784123200.1999326,
+      "n_scans": 512,
+      "production_ts": 1784123196.042,
+      "batch_latency_ms": 4157.93251991272,
+      "processing_time_ms": 32.17769099865109
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123200.639,
+      "receive_ts": 1784123201.0151746,
+      "n_scans": 512,
+      "production_ts": 1784123198.542,
+      "batch_latency_ms": 2473.174571990967,
+      "processing_time_ms": 41.35468599270098
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123200.765,
+      "receive_ts": 1784123201.0153964,
+      "n_scans": 512,
+      "production_ts": 1784123199.542,
+      "batch_latency_ms": 1473.3963012695312,
+      "processing_time_ms": 17.76360000076238
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123201.45,
+      "receive_ts": 1784123201.7790873,
+      "n_scans": 512,
+      "production_ts": 1784123199.042,
+      "batch_latency_ms": 2737.0872497558594,
+      "processing_time_ms": 33.117340004537255
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123202.148,
+      "receive_ts": 1784123202.5928197,
+      "n_scans": 512,
+      "production_ts": 1784123200.542,
+      "batch_latency_ms": 2050.8196353912354,
+      "processing_time_ms": 31.939061998855323
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123202.248,
+      "receive_ts": 1784123202.593086,
+      "n_scans": 512,
+      "production_ts": 1784123201.042,
+      "batch_latency_ms": 1551.0859489440918,
+      "processing_time_ms": 18.032337000477128
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123202.992,
+      "receive_ts": 1784123203.352272,
+      "n_scans": 512,
+      "production_ts": 1784123200.042,
+      "batch_latency_ms": 3310.271978378296,
+      "processing_time_ms": 31.94935699866619
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123203.056,
+      "receive_ts": 1784123203.817247,
+      "n_scans": 512,
+      "production_ts": 1784123201.542,
+      "batch_latency_ms": 2275.2468585968018,
+      "processing_time_ms": 32.68470898910891
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123204.28,
+      "receive_ts": 1784123204.6495762,
+      "n_scans": 512,
+      "production_ts": 1784123203.042,
+      "batch_latency_ms": 1607.5761318206787,
+      "processing_time_ms": 17.927959008375183
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123204.532,
+      "receive_ts": 1784123205.0271902,
+      "n_scans": 512,
+      "production_ts": 1784123202.542,
+      "batch_latency_ms": 2485.1901531219482,
+      "processing_time_ms": 32.70635700027924
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123204.573,
+      "receive_ts": 1784123205.027506,
+      "n_scans": 512,
+      "production_ts": 1784123202.042,
+      "batch_latency_ms": 2985.506057739258,
+      "processing_time_ms": 32.350836001569405
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123205.123,
+      "receive_ts": 1784123205.4167876,
+      "n_scans": 512,
+      "production_ts": 1784123203.542,
+      "batch_latency_ms": 1874.7875690460205,
+      "processing_time_ms": 33.19166600704193
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123205.453,
+      "receive_ts": 1784123205.8428113,
+      "n_scans": 512,
+      "production_ts": 1784123204.043,
+      "batch_latency_ms": 1799.8113632202148,
+      "processing_time_ms": 17.74469499650877
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123206.108,
+      "receive_ts": 1784123206.605713,
+      "n_scans": 512,
+      "production_ts": 1784123204.542,
+      "batch_latency_ms": 2063.7128353118896,
+      "processing_time_ms": 32.90247901168186
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123206.612,
+      "receive_ts": 1784123206.9492843,
+      "n_scans": 512,
+      "production_ts": 1784123205.042,
+      "batch_latency_ms": 1907.2842597961426,
+      "processing_time_ms": 17.774220003047958
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123207.651,
+      "receive_ts": 1784123208.1566567,
+      "n_scans": 512,
+      "production_ts": 1784123205.542,
+      "batch_latency_ms": 2614.656686782837,
+      "processing_time_ms": 31.775611991179176
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123207.785,
+      "receive_ts": 1784123208.5882676,
+      "n_scans": 512,
+      "production_ts": 1784123206.042,
+      "batch_latency_ms": 2546.267509460449,
+      "processing_time_ms": 18.065117998048663
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123208.094,
+      "receive_ts": 1784123209.0000708,
+      "n_scans": 512,
+      "production_ts": 1784123206.542,
+      "batch_latency_ms": 2458.070755004883,
+      "processing_time_ms": 33.953267004108056
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123208.642,
+      "receive_ts": 1784123209.429648,
+      "n_scans": 512,
+      "production_ts": 1784123207.042,
+      "batch_latency_ms": 2387.647867202759,
+      "processing_time_ms": 32.84515900304541
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123210.11,
+      "receive_ts": 1784123210.6146934,
+      "n_scans": 512,
+      "production_ts": 1784123208.542,
+      "batch_latency_ms": 2072.693347930908,
+      "processing_time_ms": 33.21072200196795
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123210.562,
+      "receive_ts": 1784123210.9595115,
+      "n_scans": 512,
+      "production_ts": 1784123209.042,
+      "batch_latency_ms": 1917.5114631652832,
+      "processing_time_ms": 31.589429010637105
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123211.606,
+      "receive_ts": 1784123212.1936057,
+      "n_scans": 512,
+      "production_ts": 1784123210.042,
+      "batch_latency_ms": 2151.6056060791016,
+      "processing_time_ms": 34.500635010772385
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123211.678,
+      "receive_ts": 1784123212.6654553,
+      "n_scans": 512,
+      "production_ts": 1784123207.542,
+      "batch_latency_ms": 5123.455286026001,
+      "processing_time_ms": 35.27607199794147
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123211.739,
+      "receive_ts": 1784123212.6660266,
+      "n_scans": 512,
+      "production_ts": 1784123208.042,
+      "batch_latency_ms": 4624.026536941528,
+      "processing_time_ms": 57.32564299250953
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123212.838,
+      "receive_ts": 1784123213.4703586,
+      "n_scans": 512,
+      "production_ts": 1784123211.542,
+      "batch_latency_ms": 1928.358554840088,
+      "processing_time_ms": 17.338428006041795
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123213.327,
+      "receive_ts": 1784123213.8575957,
+      "n_scans": 512,
+      "production_ts": 1784123209.543,
+      "batch_latency_ms": 4314.595699310303,
+      "processing_time_ms": 32.13434500503354
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123213.678,
+      "receive_ts": 1784123214.2748399,
+      "n_scans": 512,
+      "production_ts": 1784123212.042,
+      "batch_latency_ms": 2232.839822769165,
+      "processing_time_ms": 34.02946201094892
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123214.309,
+      "receive_ts": 1784123215.0337248,
+      "n_scans": 512,
+      "production_ts": 1784123213.042,
+      "batch_latency_ms": 1991.7247295379639,
+      "processing_time_ms": 17.851997006800957
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123214.691,
+      "receive_ts": 1784123215.382556,
+      "n_scans": 512,
+      "production_ts": 1784123210.543,
+      "batch_latency_ms": 4839.555978775024,
+      "processing_time_ms": 34.51873900485225
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123214.745,
+      "receive_ts": 1784123215.8179002,
+      "n_scans": 512,
+      "production_ts": 1784123211.042,
+      "batch_latency_ms": 4775.90012550354,
+      "processing_time_ms": 44.53099399688654
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123215.812,
+      "receive_ts": 1784123216.6813133,
+      "n_scans": 512,
+      "production_ts": 1784123214.542,
+      "batch_latency_ms": 2139.313220977783,
+      "processing_time_ms": 17.815237006288953
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123216.721,
+      "receive_ts": 1784123217.445815,
+      "n_scans": 512,
+      "production_ts": 1784123215.042,
+      "batch_latency_ms": 2403.8150310516357,
+      "processing_time_ms": 33.67517198785208
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123217.107,
+      "receive_ts": 1784123217.7859924,
+      "n_scans": 512,
+      "production_ts": 1784123215.542,
+      "batch_latency_ms": 2243.992328643799,
+      "processing_time_ms": 32.64276799745858
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123217.314,
+      "receive_ts": 1784123218.1931336,
+      "n_scans": 512,
+      "production_ts": 1784123216.042,
+      "batch_latency_ms": 2151.1335372924805,
+      "processing_time_ms": 18.267539009684697
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123217.91,
+      "receive_ts": 1784123218.555921,
+      "n_scans": 512,
+      "production_ts": 1784123212.543,
+      "batch_latency_ms": 6012.921094894409,
+      "processing_time_ms": 35.01649800455198
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123217.966,
+      "receive_ts": 1784123219.0018818,
+      "n_scans": 512,
+      "production_ts": 1784123213.542,
+      "batch_latency_ms": 5459.881782531738,
+      "processing_time_ms": 52.32640499889385
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123218.509,
+      "receive_ts": 1784123219.383622,
+      "n_scans": 512,
+      "production_ts": 1784123216.542,
+      "batch_latency_ms": 2841.6218757629395,
+      "processing_time_ms": 17.834502999903634
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123218.758,
+      "receive_ts": 1784123219.8268485,
+      "n_scans": 512,
+      "production_ts": 1784123217.042,
+      "batch_latency_ms": 2784.84845161438,
+      "processing_time_ms": 33.54671198758297
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123219.536,
+      "receive_ts": 1784123220.1639707,
+      "n_scans": 512,
+      "production_ts": 1784123214.042,
+      "batch_latency_ms": 6121.970653533936,
+      "processing_time_ms": 32.012762007070705
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123219.68,
+      "receive_ts": 1784123220.552994,
+      "n_scans": 512,
+      "production_ts": 1784123218.042,
+      "batch_latency_ms": 2510.9939575195312,
+      "processing_time_ms": 18.022067000856623
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123220.15,
+      "receive_ts": 1784123220.8945649,
+      "n_scans": 512,
+      "production_ts": 1784123218.542,
+      "batch_latency_ms": 2352.564811706543,
+      "processing_time_ms": 34.44560000207275
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123220.715,
+      "receive_ts": 1784123221.3145633,
+      "n_scans": 512,
+      "production_ts": 1784123219.042,
+      "batch_latency_ms": 2272.5632190704346,
+      "processing_time_ms": 32.67792600672692
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123220.935,
+      "receive_ts": 1784123221.7025292,
+      "n_scans": 512,
+      "production_ts": 1784123219.542,
+      "batch_latency_ms": 2160.529136657715,
+      "processing_time_ms": 17.677074996754527
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123221.111,
+      "receive_ts": 1784123222.1360996,
+      "n_scans": 512,
+      "production_ts": 1784123217.542,
+      "batch_latency_ms": 4594.099521636963,
+      "processing_time_ms": 33.21732100448571
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123221.743,
+      "receive_ts": 1784123222.5309255,
+      "n_scans": 512,
+      "production_ts": 1784123220.042,
+      "batch_latency_ms": 2488.9254570007324,
+      "processing_time_ms": 32.499678010935895
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123222.262,
+      "receive_ts": 1784123222.9260387,
+      "n_scans": 512,
+      "production_ts": 1784123221.043,
+      "batch_latency_ms": 1883.0387592315674,
+      "processing_time_ms": 18.26042600441724
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123222.406,
+      "receive_ts": 1784123223.2875552,
+      "n_scans": 512,
+      "production_ts": 1784123220.542,
+      "batch_latency_ms": 2745.5551624298096,
+      "processing_time_ms": 34.83937500277534
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123223.452,
+      "receive_ts": 1784123224.1241515,
+      "n_scans": 512,
+      "production_ts": 1784123221.542,
+      "batch_latency_ms": 2582.151412963867,
+      "processing_time_ms": 17.682167002931237
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123223.713,
+      "receive_ts": 1784123224.499376,
+      "n_scans": 512,
+      "production_ts": 1784123222.042,
+      "batch_latency_ms": 2457.376003265381,
+      "processing_time_ms": 44.66974899696652
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123224.671,
+      "receive_ts": 1784123225.338882,
+      "n_scans": 512,
+      "production_ts": 1784123222.542,
+      "batch_latency_ms": 2796.881914138794,
+      "processing_time_ms": 17.937666998477653
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123224.803,
+      "receive_ts": 1784123225.7175431,
+      "n_scans": 512,
+      "production_ts": 1784123223.042,
+      "batch_latency_ms": 2675.5430698394775,
+      "processing_time_ms": 34.5979479898233
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123225.732,
+      "receive_ts": 1784123226.4787085,
+      "n_scans": 512,
+      "production_ts": 1784123224.042,
+      "batch_latency_ms": 2436.708450317383,
+      "processing_time_ms": 36.03503400518093
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123226.109,
+      "receive_ts": 1784123226.8379297,
+      "n_scans": 512,
+      "production_ts": 1784123224.542,
+      "batch_latency_ms": 2295.9296703338623,
+      "processing_time_ms": 45.86205800296739
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123226.495,
+      "receive_ts": 1784123226.5880105,
+      "n_scans": 512,
+      "production_ts": 1784123223.542,
+      "batch_latency_ms": 3046.0104942321777,
+      "processing_time_ms": 34.540888998890296
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123227.394,
+      "receive_ts": 1784123227.8115203,
+      "n_scans": 512,
+      "production_ts": 1784123225.042,
+      "batch_latency_ms": 2769.5202827453613,
+      "processing_time_ms": 35.40550700563472
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123228.109,
+      "receive_ts": 1784123228.2262416,
+      "n_scans": 512,
+      "production_ts": 1784123226.542,
+      "batch_latency_ms": 1684.241533279419,
+      "processing_time_ms": 45.2208399947267
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123229.732,
+      "receive_ts": 1784123229.8750799,
+      "n_scans": 512,
+      "production_ts": 1784123228.042,
+      "batch_latency_ms": 1833.0798149108887,
+      "processing_time_ms": 35.546368002542295
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123230.659,
+      "receive_ts": 1784123231.1323004,
+      "n_scans": 512,
+      "production_ts": 1784123225.542,
+      "batch_latency_ms": 5590.3003215789795,
+      "processing_time_ms": 34.12253399437759
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123230.711,
+      "receive_ts": 1784123231.5650473,
+      "n_scans": 512,
+      "production_ts": 1784123226.042,
+      "batch_latency_ms": 5523.047208786011,
+      "processing_time_ms": 43.88797999126837
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123231.106,
+      "receive_ts": 1784123232.0295198,
+      "n_scans": 512,
+      "production_ts": 1784123227.042,
+      "batch_latency_ms": 4987.51974105835,
+      "processing_time_ms": 42.6041170139797
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123231.168,
+      "receive_ts": 1784123232.0301547,
+      "n_scans": 512,
+      "production_ts": 1784123227.542,
+      "batch_latency_ms": 4488.154649734497,
+      "processing_time_ms": 59.35223800770473
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123231.394,
+      "receive_ts": 1784123232.0303853,
+      "n_scans": 512,
+      "production_ts": 1784123228.542,
+      "batch_latency_ms": 3488.3852005004883,
+      "processing_time_ms": 33.91208700486459
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123232.28,
+      "receive_ts": 1784123232.4325576,
+      "n_scans": 512,
+      "production_ts": 1784123231.042,
+      "batch_latency_ms": 1390.5575275421143,
+      "processing_time_ms": 18.190984003013
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123232.273,
+      "receive_ts": 1784123232.810876,
+      "n_scans": 512,
+      "production_ts": 1784123229.042,
+      "batch_latency_ms": 3768.87583732605,
+      "processing_time_ms": 32.821248008986004
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123232.727,
+      "receive_ts": 1784123233.1876166,
+      "n_scans": 512,
+      "production_ts": 1784123230.042,
+      "batch_latency_ms": 3145.6165313720703,
+      "processing_time_ms": 31.703054002719
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123233.814,
+      "receive_ts": 1784123234.0146618,
+      "n_scans": 512,
+      "production_ts": 1784123231.542,
+      "batch_latency_ms": 2472.6617336273193,
+      "processing_time_ms": 31.932106998283416
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123234.552,
+      "receive_ts": 1784123234.8593931,
+      "n_scans": 512,
+      "production_ts": 1784123229.542,
+      "batch_latency_ms": 5317.393064498901,
+      "processing_time_ms": 33.19160299724899
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123234.604,
+      "receive_ts": 1784123235.2550316,
+      "n_scans": 512,
+      "production_ts": 1784123230.542,
+      "batch_latency_ms": 4713.031530380249,
+      "processing_time_ms": 48.649871998350136
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123234.763,
+      "receive_ts": 1784123235.2552521,
+      "n_scans": 512,
+      "production_ts": 1784123233.542,
+      "batch_latency_ms": 1713.252067565918,
+      "processing_time_ms": 18.47307599382475
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123235.319,
+      "receive_ts": 1784123235.650645,
+      "n_scans": 512,
+      "production_ts": 1784123232.542,
+      "batch_latency_ms": 3108.644962310791,
+      "processing_time_ms": 32.23303600680083
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123236.256,
+      "receive_ts": 1784123236.8577948,
+      "n_scans": 512,
+      "production_ts": 1784123235.042,
+      "batch_latency_ms": 1815.7947063446045,
+      "processing_time_ms": 17.16202500392683
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123236.843,
+      "receive_ts": 1784123237.4550366,
+      "n_scans": 512,
+      "production_ts": 1784123234.042,
+      "batch_latency_ms": 3413.036584854126,
+      "processing_time_ms": 32.46353199938312
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123237.585,
+      "receive_ts": 1784123238.0997224,
+      "n_scans": 512,
+      "production_ts": 1784123236.042,
+      "batch_latency_ms": 2057.722330093384,
+      "processing_time_ms": 34.26620199752506
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123237.712,
+      "receive_ts": 1784123239.0108109,
+      "n_scans": 512,
+      "production_ts": 1784123232.042,
+      "batch_latency_ms": 6968.810796737671,
+      "processing_time_ms": 32.04468100739177
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123237.762,
+      "receive_ts": 1784123239.0115855,
+      "n_scans": 512,
+      "production_ts": 1784123233.042,
+      "batch_latency_ms": 5969.585418701172,
+      "processing_time_ms": 47.00631700688973
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123237.793,
+      "receive_ts": 1784123239.011955,
+      "n_scans": 512,
+      "production_ts": 1784123236.542,
+      "batch_latency_ms": 2469.9549674987793,
+      "processing_time_ms": 18.515655989176594
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123238.384,
+      "receive_ts": 1784123239.7838852,
+      "n_scans": 512,
+      "production_ts": 1784123235.542,
+      "batch_latency_ms": 4241.885185241699,
+      "processing_time_ms": 31.313191997469403
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123239.136,
+      "receive_ts": 1784123240.3787286,
+      "n_scans": 512,
+      "production_ts": 1784123237.542,
+      "batch_latency_ms": 2836.728572845459,
+      "processing_time_ms": 32.285196997690946
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123239.306,
+      "receive_ts": 1784123240.3790863,
+      "n_scans": 512,
+      "production_ts": 1784123234.542,
+      "batch_latency_ms": 5837.086200714111,
+      "processing_time_ms": 32.63624801184051
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123240.091,
+      "receive_ts": 1784123240.8804996,
+      "n_scans": 512,
+      "production_ts": 1784123238.542,
+      "batch_latency_ms": 2338.4995460510254,
+      "processing_time_ms": 33.13954500481486
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123241.581,
+      "receive_ts": 1784123242.2848597,
+      "n_scans": 512,
+      "production_ts": 1784123240.042,
+      "batch_latency_ms": 2242.8596019744873,
+      "processing_time_ms": 33.11471900087781
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123241.633,
+      "receive_ts": 1784123242.7509584,
+      "n_scans": 512,
+      "production_ts": 1784123239.042,
+      "batch_latency_ms": 3708.958387374878,
+      "processing_time_ms": 32.051332003902644
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123242.382,
+      "receive_ts": 1784123243.2295504,
+      "n_scans": 512,
+      "production_ts": 1784123237.042,
+      "batch_latency_ms": 6187.55030632019,
+      "processing_time_ms": 33.22628600290045
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123242.431,
+      "receive_ts": 1784123243.6471546,
+      "n_scans": 512,
+      "production_ts": 1784123238.042,
+      "batch_latency_ms": 5605.154514312744,
+      "processing_time_ms": 45.382828000583686
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123243.1,
+      "receive_ts": 1784123244.1794186,
+      "n_scans": 512,
+      "production_ts": 1784123240.542,
+      "batch_latency_ms": 3637.418508529663,
+      "processing_time_ms": 32.777782005723566
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123243.995,
+      "receive_ts": 1784123244.5958195,
+      "n_scans": 512,
+      "production_ts": 1784123239.542,
+      "batch_latency_ms": 5053.819417953491,
+      "processing_time_ms": 32.57417799613904
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123244.611,
+      "receive_ts": 1784123245.0719025,
+      "n_scans": 512,
+      "production_ts": 1784123243.042,
+      "batch_latency_ms": 2029.902458190918,
+      "processing_time_ms": 34.24481900583487
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123244.623,
+      "receive_ts": 1784123245.5746076,
+      "n_scans": 512,
+      "production_ts": 1784123241.042,
+      "batch_latency_ms": 4532.607555389404,
+      "processing_time_ms": 34.30683899205178
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123244.674,
+      "receive_ts": 1784123245.5749116,
+      "n_scans": 512,
+      "production_ts": 1784123241.542,
+      "batch_latency_ms": 4032.911539077759,
+      "processing_time_ms": 48.275591994752176
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123244.776,
+      "receive_ts": 1784123245.575104,
+      "n_scans": 512,
+      "production_ts": 1784123243.542,
+      "batch_latency_ms": 2033.1039428710938,
+      "processing_time_ms": 16.885623990674503
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123245.534,
+      "receive_ts": 1784123246.0428576,
+      "n_scans": 512,
+      "production_ts": 1784123242.542,
+      "batch_latency_ms": 3500.8575916290283,
+      "processing_time_ms": 31.76675899885595
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123246.144,
+      "receive_ts": 1784123246.9493039,
+      "n_scans": 512,
+      "production_ts": 1784123244.042,
+      "batch_latency_ms": 2907.303810119629,
+      "processing_time_ms": 32.302420993801206
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123246.207,
+      "receive_ts": 1784123247.3996758,
+      "n_scans": 512,
+      "production_ts": 1784123242.042,
+      "batch_latency_ms": 5357.675790786743,
+      "processing_time_ms": 34.32853799313307
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123247.122,
+      "receive_ts": 1784123247.8427413,
+      "n_scans": 512,
+      "production_ts": 1784123245.542,
+      "batch_latency_ms": 2300.741195678711,
+      "processing_time_ms": 31.48803600925021
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123247.295,
+      "receive_ts": 1784123248.2339435,
+      "n_scans": 512,
+      "production_ts": 1784123246.042,
+      "batch_latency_ms": 2191.943407058716,
+      "processing_time_ms": 18.01717499620281
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123247.625,
+      "receive_ts": 1784123248.689901,
+      "n_scans": 512,
+      "production_ts": 1784123245.042,
+      "batch_latency_ms": 3647.9010581970215,
+      "processing_time_ms": 31.800404001842253
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123247.75,
+      "receive_ts": 1784123248.6905124,
+      "n_scans": 512,
+      "production_ts": 1784123244.542,
+      "batch_latency_ms": 4148.512363433838,
+      "processing_time_ms": 33.06249500019476
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123249.607,
+      "receive_ts": 1784123250.1664371,
+      "n_scans": 512,
+      "production_ts": 1784123248.042,
+      "batch_latency_ms": 2124.437093734741,
+      "processing_time_ms": 32.226782001089305
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123249.834,
+      "receive_ts": 1784123250.6186252,
+      "n_scans": 512,
+      "production_ts": 1784123248.542,
+      "batch_latency_ms": 2076.625108718872,
+      "processing_time_ms": 17.6604130101623
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123250.65,
+      "receive_ts": 1784123251.5450103,
+      "n_scans": 512,
+      "production_ts": 1784123249.042,
+      "batch_latency_ms": 2503.0102729797363,
+      "processing_time_ms": 32.161540002562106
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123252.069,
+      "receive_ts": 1784123252.9443588,
+      "n_scans": 512,
+      "production_ts": 1784123250.542,
+      "batch_latency_ms": 2402.3587703704834,
+      "processing_time_ms": 33.085721006500535
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123252.086,
+      "receive_ts": 1784123253.4937613,
+      "n_scans": 512,
+      "production_ts": 1784123246.542,
+      "batch_latency_ms": 6951.761245727539,
+      "processing_time_ms": 34.10667000571266
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123252.137,
+      "receive_ts": 1784123253.4940782,
+      "n_scans": 512,
+      "production_ts": 1784123247.042,
+      "batch_latency_ms": 6452.078104019165,
+      "processing_time_ms": 48.04374299419578
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123252.182,
+      "receive_ts": 1784123253.4943426,
+      "n_scans": 512,
+      "production_ts": 1784123247.542,
+      "batch_latency_ms": 5952.342510223389,
+      "processing_time_ms": 42.14315400167834
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123252.226,
+      "receive_ts": 1784123253.4945128,
+      "n_scans": 512,
+      "production_ts": 1784123250.042,
+      "batch_latency_ms": 3452.512741088867,
+      "processing_time_ms": 33.23008200095501
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123253.297,
+      "receive_ts": 1784123253.9277868,
+      "n_scans": 512,
+      "production_ts": 1784123252.042,
+      "batch_latency_ms": 1885.786771774292,
+      "processing_time_ms": 18.08057600283064
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123253.73,
+      "receive_ts": 1784123254.442604,
+      "n_scans": 512,
+      "production_ts": 1784123249.542,
+      "batch_latency_ms": 4900.604009628296,
+      "processing_time_ms": 31.936223997035995
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123253.797,
+      "receive_ts": 1784123254.9704359,
+      "n_scans": 512,
+      "production_ts": 1784123251.542,
+      "batch_latency_ms": 3428.435802459717,
+      "processing_time_ms": 33.47531000326853
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123254.561,
+      "receive_ts": 1784123255.44509,
+      "n_scans": 512,
+      "production_ts": 1784123253.042,
+      "batch_latency_ms": 2403.090000152588,
+      "processing_time_ms": 30.968812003266066
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123255.248,
+      "receive_ts": 1784123255.91328,
+      "n_scans": 512,
+      "production_ts": 1784123251.042,
+      "batch_latency_ms": 4871.279954910278,
+      "processing_time_ms": 32.534160010982305
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123255.324,
+      "receive_ts": 1784123256.3768852,
+      "n_scans": 512,
+      "production_ts": 1784123252.542,
+      "batch_latency_ms": 3834.8851203918457,
+      "processing_time_ms": 32.915803996729665
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123256.111,
+      "receive_ts": 1784123256.7968545,
+      "n_scans": 512,
+      "production_ts": 1784123253.542,
+      "batch_latency_ms": 3254.854440689087,
+      "processing_time_ms": 33.29385600227397
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123257.099,
+      "receive_ts": 1784123258.2058318,
+      "n_scans": 512,
+      "production_ts": 1784123255.542,
+      "batch_latency_ms": 2663.8317108154297,
+      "processing_time_ms": 33.72924200084526
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123257.685,
+      "receive_ts": 1784123257.954914,
+      "n_scans": 512,
+      "production_ts": 1784123256.042,
+      "batch_latency_ms": 1912.9140377044678,
+      "processing_time_ms": 32.62994298711419
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123257.776,
+      "receive_ts": 1784123258.4430604,
+      "n_scans": 512,
+      "production_ts": 1784123256.542,
+      "batch_latency_ms": 1901.0603427886963,
+      "processing_time_ms": 17.32570299645886
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123259.103,
+      "receive_ts": 1784123259.896024,
+      "n_scans": 512,
+      "production_ts": 1784123257.542,
+      "batch_latency_ms": 2354.0239334106445,
+      "processing_time_ms": 33.35002699168399
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123259.688,
+      "receive_ts": 1784123260.2997222,
+      "n_scans": 512,
+      "production_ts": 1784123254.042,
+      "batch_latency_ms": 6257.7221393585205,
+      "processing_time_ms": 32.376497008954175
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123259.736,
+      "receive_ts": 1784123260.3001058,
+      "n_scans": 512,
+      "production_ts": 1784123254.542,
+      "batch_latency_ms": 5758.105754852295,
+      "processing_time_ms": 45.12712599535007
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123259.791,
+      "receive_ts": 1784123260.3003263,
+      "n_scans": 512,
+      "production_ts": 1784123255.042,
+      "batch_latency_ms": 5258.326292037964,
+      "processing_time_ms": 52.06253001233563
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123260.628,
+      "receive_ts": 1784123261.2380328,
+      "n_scans": 512,
+      "production_ts": 1784123258.042,
+      "batch_latency_ms": 3196.032762527466,
+      "processing_time_ms": 35.29655499733053
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123260.621,
+      "receive_ts": 1784123261.715403,
+      "n_scans": 512,
+      "production_ts": 1784123259.042,
+      "batch_latency_ms": 2673.403024673462,
+      "processing_time_ms": 35.14783400169108
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123261.314,
+      "receive_ts": 1784123262.1575513,
+      "n_scans": 512,
+      "production_ts": 1784123257.042,
+      "batch_latency_ms": 5115.551233291626,
+      "processing_time_ms": 33.35831199365202
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123261.81,
+      "receive_ts": 1784123262.6044114,
+      "n_scans": 512,
+      "production_ts": 1784123260.542,
+      "batch_latency_ms": 2062.411308288574,
+      "processing_time_ms": 18.070928010274656
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123262.194,
+      "receive_ts": 1784123263.0478387,
+      "n_scans": 512,
+      "production_ts": 1784123259.542,
+      "batch_latency_ms": 3505.838632583618,
+      "processing_time_ms": 32.87706400442403
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123262.215,
+      "receive_ts": 1784123263.0483356,
+      "n_scans": 512,
+      "production_ts": 1784123260.042,
+      "batch_latency_ms": 3006.335496902466,
+      "processing_time_ms": 33.84602299774997
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123262.863,
+      "receive_ts": 1784123263.4659376,
+      "n_scans": 512,
+      "production_ts": 1784123258.542,
+      "batch_latency_ms": 4923.937559127808,
+      "processing_time_ms": 31.946707997121848
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123263.03,
+      "receive_ts": 1784123263.4670177,
+      "n_scans": 512,
+      "production_ts": 1784123261.542,
+      "batch_latency_ms": 1925.0175952911377,
+      "processing_time_ms": 18.139496009098366
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123263.809,
+      "receive_ts": 1784123264.4271107,
+      "n_scans": 512,
+      "production_ts": 1784123261.042,
+      "batch_latency_ms": 3385.11061668396,
+      "processing_time_ms": 33.29626200138591
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123264.232,
+      "receive_ts": 1784123264.8666296,
+      "n_scans": 512,
+      "production_ts": 1784123262.042,
+      "batch_latency_ms": 2824.629545211792,
+      "processing_time_ms": 18.126170994946733
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123265.119,
+      "receive_ts": 1784123265.274845,
+      "n_scans": 512,
+      "production_ts": 1784123263.542,
+      "batch_latency_ms": 1732.8448295593262,
+      "processing_time_ms": 33.799141994677484
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123265.399,
+      "receive_ts": 1784123265.7216463,
+      "n_scans": 512,
+      "production_ts": 1784123262.542,
+      "batch_latency_ms": 3179.6462535858154,
+      "processing_time_ms": 32.6092460018117
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123265.48,
+      "receive_ts": 1784123265.7218852,
+      "n_scans": 512,
+      "production_ts": 1784123263.042,
+      "batch_latency_ms": 2679.885149002075,
+      "processing_time_ms": 18.00951099721715
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123266.637,
+      "receive_ts": 1784123267.147953,
+      "n_scans": 512,
+      "production_ts": 1784123264.542,
+      "batch_latency_ms": 2605.9529781341553,
+      "processing_time_ms": 18.14783099689521
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123266.635,
+      "receive_ts": 1784123267.7072484,
+      "n_scans": 512,
+      "production_ts": 1784123265.042,
+      "batch_latency_ms": 2665.248394012451,
+      "processing_time_ms": 31.541443007881753
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123266.998,
+      "receive_ts": 1784123267.708259,
+      "n_scans": 512,
+      "production_ts": 1784123264.042,
+      "batch_latency_ms": 3666.2590503692627,
+      "processing_time_ms": 33.117533996119164
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123267.861,
+      "receive_ts": 1784123268.1106613,
+      "n_scans": 512,
+      "production_ts": 1784123265.542,
+      "batch_latency_ms": 2568.6612129211426,
+      "processing_time_ms": 17.892018993734382
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123268.169,
+      "receive_ts": 1784123268.507627,
+      "n_scans": 512,
+      "production_ts": 1784123266.542,
+      "batch_latency_ms": 1965.6269550323486,
+      "processing_time_ms": 32.06145600415766
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123268.604,
+      "receive_ts": 1784123268.9314737,
+      "n_scans": 512,
+      "production_ts": 1784123266.042,
+      "batch_latency_ms": 2889.4736766815186,
+      "processing_time_ms": 34.44542799843475
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123269.253,
+      "receive_ts": 1784123269.971338,
+      "n_scans": 512,
+      "production_ts": 1784123268.042,
+      "batch_latency_ms": 1929.337978363037,
+      "processing_time_ms": 17.95163100177888
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123269.686,
+      "receive_ts": 1784123270.3946936,
+      "n_scans": 512,
+      "production_ts": 1784123267.542,
+      "batch_latency_ms": 2852.693557739258,
+      "processing_time_ms": 32.02708199387416
+    },
+    {
+      "worker_id": 4,
+      "result_ts": 1784123270.207,
+      "receive_ts": 1784123270.850048,
+      "n_scans": 512,
+      "production_ts": 1784123267.042,
+      "batch_latency_ms": 3808.0480098724365,
+      "processing_time_ms": 32.32715399644803
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123271.188,
+      "receive_ts": 1784123271.754273,
+      "n_scans": 512,
+      "production_ts": 1784123269.542,
+      "batch_latency_ms": 2212.272882461548,
+      "processing_time_ms": 33.91848900355399
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123271.662,
+      "receive_ts": 1784123272.2105412,
+      "n_scans": 512,
+      "production_ts": 1784123268.542,
+      "batch_latency_ms": 3668.541193008423,
+      "processing_time_ms": 17.96417600417044
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123271.695,
+      "receive_ts": 1784123272.7030952,
+      "n_scans": 512,
+      "production_ts": 1784123269.042,
+      "batch_latency_ms": 3661.095142364502,
+      "processing_time_ms": 31.01366900955327
+    },
+    {
+      "worker_id": 1,
+      "result_ts": 1784123272.585,
+      "receive_ts": 1784123273.0909283,
+      "n_scans": 512,
+      "production_ts": 1784123271.042,
+      "batch_latency_ms": 2048.9282608032227,
+      "processing_time_ms": 34.245992996147834
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123272.736,
+      "receive_ts": 1784123273.4972842,
+      "n_scans": 512,
+      "production_ts": 1784123270.042,
+      "batch_latency_ms": 3455.2841186523438,
+      "processing_time_ms": 33.8329980004346
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123274.093,
+      "receive_ts": 1784123274.8344157,
+      "n_scans": 512,
+      "production_ts": 1784123270.542,
+      "batch_latency_ms": 4292.415618896484,
+      "processing_time_ms": 18.082016991684213
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123274.123,
+      "receive_ts": 1784123275.276592,
+      "n_scans": 512,
+      "production_ts": 1784123271.542,
+      "batch_latency_ms": 3734.5919609069824,
+      "processing_time_ms": 28.437182001653127
+    },
+    {
+      "worker_id": 3,
+      "result_ts": 1784123274.326,
+      "receive_ts": 1784123275.2770534,
+      "n_scans": 512,
+      "production_ts": 1784123272.542,
+      "batch_latency_ms": 2735.053300857544,
+      "processing_time_ms": 32.10369600856211
+    },
+    {
+      "worker_id": 2,
+      "result_ts": 1784123275.331,
+      "receive_ts": 1784123276.2081833,
+      "n_scans": 512,
+      "production_ts": 1784123272.042,
+      "batch_latency_ms": 4166.183233261108,
+      "processing_time_ms": 17.80587800021749
+    }
+  ]
+}
